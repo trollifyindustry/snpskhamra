@@ -1,0 +1,123 @@
+<!-- HTML Page Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img hosting</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e1e1e;
+            color: white;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .copy-btn, .upload-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .copy-btn:hover, .upload-btn:hover {
+            background-color: #45a049;
+        }
+        .upload-btn {
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://script.google.com/macros/s/AKfycbxES-eU0mn40TWo8-z7uwssEKnSHpOilFk-zj3HZ7xAqMJpw-dbJCdFuGwZaJWJb3QY_Q/exec" class="upload-btn">Upload Image</a>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Father Name</th>
+                <th>URL</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody id="data-table"></tbody>
+    </table>
+
+    <script>
+        async function fetchData() {
+            Swal.fire({
+                title: 'Loading...',
+                text: 'Power by : Trollify Industry',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+            
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycby1uz8HwoTjseWErgZEgV422WwRCqv4oqWrBXoLjfwhpF8z3UYoIowhoUTQ19y2OrMk/exec');
+                const data = await response.json();
+                
+                const tableBody = document.getElementById("data-table");
+                tableBody.innerHTML = "";
+                
+                data.reverse().forEach(item => {
+                    let row = `<tr>
+                        <td>${item.name}</td>
+                        <td>${item.father}</td>
+                        <td>
+                            <!--
+                            <a href="${item.url}" target="_blank">${item.url}</a>
+                            --->
+                            <button class="copy-btn" onclick="copyToClipboard('${item.url}')">Copy</button>
+                        </td>
+                        <td><img src="${item.url}" alt="Photo"></td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+                Swal.close();
+            } catch (error) {
+                Swal.fire('Error', 'Failed to load data!', 'error');
+                console.error("Error fetching data:", error);
+            }
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied: " + text);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+        
+        fetchData();
+    </script>
+</body>
+</html>
