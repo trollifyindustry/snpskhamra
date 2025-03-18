@@ -1,5 +1,5 @@
 function doGet() {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("1st5th");
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
     var data = sheet.getDataRange().getValues();
     data.shift(); // Remove header row
 
