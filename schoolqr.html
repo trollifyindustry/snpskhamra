@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - Trollify Industry</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        /* Spinner Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Spinner Style */
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #ff1e56;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Show SweetAlert Loading Spinner
+    Swal.fire({
+        title: 'Loading...',
+        html: `
+            <div class="spinner"></div>
+            <h3 style="color:#ff1e56; font-family: Arial; margin-top:10px;">Trollify Industry</h3>
+        `,
+        showConfirmButton: false,
+        background: 'linear-gradient(145deg, #0f0c29, #302b63, #24243e)',
+        color: 'white',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: () => {
+            // Redirect after 3 seconds
+            setTimeout(() => {
+                window.location.href = "https://trollifyindustry.github.io/snpskhamra/";
+            }, 3000);
+        }
+    });
+</script>
+
+</body>
+</html>
