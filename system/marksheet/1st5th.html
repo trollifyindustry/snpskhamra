@@ -56,29 +56,65 @@
                         invoice.innerHTML = `
                   <body> 
                    <div class="r" >  
-                   <img class="img"  src="https://lh3.googleusercontent.com/d/1a2n6xRwWBcuNnxHqeTx6nO4cTJ5b9qFa=s0">  
-                   <img class="photo" src="${row[12]}">    <br> <br><br><br><br><h2>ANNUAL EXAMINATION - 2024-25</h2> 
-                   <h1>MARKSHEET</h1>
-                   
-                   
+                   <img class="img"  src="https://lh3.googleusercontent.com/d/1uwPv9QU2JT_SqST8AR1ZIiOHZfCByR24=s0">  
+                   <img class="photo" src="${row[12]}">    <br> <br><br><br><br><h2ACADEMIC SESSION 2024-25></h2> 
+                   <h1REPORT CARD></h1>
+
                   <br><br> <br><br><br><br><br><br>
+    <table class="nametable">
+                   <tr>
+                       <th class="name" width="180px">STUDENT NAME</th>
+                       <td class="name" width="400px"> : ${row[0]}</td>
+                       <th class="name" width="175px">ROLL NUMBER</th>
+                       <td class="name"> : ${row[1]}</td>
+                   </tr>
+                   <tr>
+                       <th class="name">FATHER NAME</th>
+                       <td class="name"> : ${row[2]}</td>
+                       <th class="name">CLASS</th>
+                       <td class="name"> : ${row[6]}</td>
+                   </tr>
+                   <tr>
+                       <th class="name">MOTHER NAME</th>
+                       <td class="name"> : ${row[3]}</td>
+                       <th class="name">SCHOLAR NO.</th>
+                       <td class="name"> : ${row[9]}</td>
+                   </tr>
+                   <tr>
+                       <th class="name">DATE OF BIRTH</th>
+                       <td class="name"> : ${row[4]}</td>
+                       <th class="name">GANDER</th>
+                       <td class="name"> : ${row[8]}</td>
+                   </tr>
+                </table>
                    
-                   <table class="ns" >   
+                   
+                   <table class="inone" >   
                    <tr>  
-                   <td class="name" ><b>STUDENT NAME</b><i class="nam">..</i>:<i class="nam">..</i>${row[0]}</td><td class="name" ><b>ROLL NUMBER</b> <i class="nam">......</i>:<i class="nam">..</i>${row[1]}</td><td class="name" ></td><td class="name" ></td></td><td class="name" ></td><td class="nam" >.</td><td class="nam"  >..............</td>    
+                   <td class="name" ><b>STUDENT NAME</b><i class="nam">..</i>:<i class="nam">..</i>${row[0]}</td><td class="name" ><b>ROLL NUMBER</b> <i class="nam">.....</i>:<i class="nam">..</i>${row[1]}</td><td class="name" ></td><td class="name" ></td></td><td class="name" ></td><td class="nam" >.</td><td class="nam"  >..............</td>    
                    </tr>  
                    <tr>   
                    <td class="name" ><b>FATHER NAME</b><i class="nam">...</i> :<i class="nam">...</i>${row[2]}</td><td class="name" ><b>CLASS</b><i class="nam">....................</i>:<i class="nam">..</i>${row[6]}</td><td class="name" ></td>   
                    </tr>  
                    <tr>   
-                   <td class="name" ><b>MOTHER NAME</b><i class="nam">..</i> :<i class="nam">..</i> ${row[3]}</td>  <td class="name" ><b>CATEGORY</b> <i class="nam">............</i>:<i class="nam">..</i>${row[7]}</td><td class="name" ></td>   
+                   <td class="name" ><b>MOTHER NAME</b><i class="nam">..</i> :<i class="nam">..</i> ${row[3]}</td>  <td class="name" ><b>SCHOLAR NO.</b> <i class="nam">......</i>:<i class="nam">..</i>${row[9]}</td><td class="name" ></td>   
                    </tr>  
                    <tr>   
                    <td class="name" ><b>DATE OF BIRTH</b><i class="nam">..</i>:<i class="nam">..</i> ${row[4]}</td> <td class="name" ><b>GANDER</b> <i class="nam">................</i>:<i class="nam">..</i>${row[8]} </td><td class="name" ></td>   
                    </tr>  
-                   </table>  <br><br><br><br><br><br><br><br><br>
+                   </table> 
                    
-                   <h3 class="aoaa" >ASSESSMENT OF ACADEMIC AREAS</h3> 
+                   
+                   
+              
+                   
+                   
+                   
+                   
+                   
+                   <br><br><br><br><br><br><br><br><br><br>
+                   
+                   <h3 class="aoaa" >ASSESSMENT OF ACADEMIC AREAS</h3> <br>
                    <table class="mtt"> 
                    <tr>  
                    <th rowspan="3">S.N.</th>  
@@ -116,7 +152,7 @@
                    <td>${row[56]}</td> <td>${row[57]}</td> <td>${row[58]}</td>  
                    <td>${row[74]}</td> <td>${row[75]}</td>  
                    <td>${row[86]}</td> <td>${row[87]}</td> <td>${row[88]}</td>  
-                   <td>${row[104]}</td> <td>${row[105]}</td>  
+                   <td>${formatNumber(row[104])}</td> <td>${row[105]}</td>  
                    </tr>  
                    <tr>  
                    <td>2</td>  
@@ -138,7 +174,7 @@
                    </tr>  
                    <tr>  
                    <td>4</td>  
-                   <td>SCIENCE/EVS</td>  
+                   <td>ORAL</td> 
                    <td>${row[47]}</td> <td>${row[48]}</td> <td>${row[49]}</td>  
                    <td>${row[65]}</td> <td>${row[66]}</td> <td>${row[67]}</td>  
                    <td>${row[80]}</td> <td>${row[81]}</td>  
@@ -147,7 +183,7 @@
                    </tr>  
                    <tr>  
                    <td>5</td>  
-                   <td>DROWNING</td>  
+                   <td>DRAWNING</td>  
                    <td>${row[50]}</td> <td>${row[51]}</td> <td>${row[52]}</td>  
                    <td>${row[68]}</td> <td>${row[69]}</td> <td>${row[70]}</td>  
                    <td>${row[82]}</td> <td>${row[83]}</td>  
@@ -164,7 +200,7 @@
                    <td>${formatNumber(row[114])}</td> <td>${row[115]}</td>  
                    </tr>  
                    </table>  
-                   <img class="bgimg" src="https://i.ibb.co/Z1K0Dm9L/20250224-094736.png"  >  
+                   <img class="bgimg" src="https://lh3.googleusercontent.com/d/1WcuFlI4TUpXJRsFNPzMW8ySMlujqEycQ=s0">  
                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                    <table class="lt" >  <tr>  
                    <td width="150px">75-100%</td>  
@@ -217,9 +253,17 @@
     
 </table>
 
+                   
+              
+                   
+                   
+                   
+               
+
+
 <p class="sot">Signature of Teacher</p>
 <p class="sot2">Signature of Principal</p>
-<p class="dakhilno"><b>Scholar Number : </b> <b style="color:red;">${row[9]}</b></p>
+<p class="dakhilno"><b></b> <b style="color:red;"></b></p>
 <p class="issueDate">Issue Date :${row[10]}</p>
 <img class="qr" src="${row[20]}">
 
@@ -256,6 +300,24 @@
 
 <style>
 
+ 
+  
+.name{  
+ background-color:transparent;  
+ text-align:left;  
+ padding:2px;  
+
+   } 
+.nametable{  
+  position:absolute;
+  width:80%;  
+  margin-left:110px;
+  margin-top:;
+  font-size:;
+  border:none;
+  text-align:left;
+   } 
+  
   .vm {
     text-align: right;
     font-variant-numeric: tabular-nums;
@@ -267,6 +329,7 @@
   margin-top:-625px;
   font-size:22px;
   margin-left:1400px;
+  display:none;
 }
 .dakhilno{
   position:absolute;
@@ -275,6 +338,7 @@
   margin-top:-625px;
   font-size:22px;
   margin-left:40px;
+  display:none;
 }
 .qr{
   position:absolute;
@@ -282,6 +346,7 @@
   margin-left:1530px;
   margin-top:-720px;
   border:0.6px solid black;
+  display:none;
   
 }
 .sot{
@@ -335,7 +400,7 @@ th, td {
       
 }  
 th {  
-    background-color: #d7f0ff;  
+    background-color: transparent;  
 }  
    .img {  
    position:absolute;  
@@ -375,7 +440,8 @@ th {
   border:1px solid black;  
   border-radius:3px;  
   margin-top:300px;  
-  margin-left:1420px;  
+  margin-left:1420px;
+  
    }  
    .bgimg{  
   width:47%;  
@@ -384,7 +450,7 @@ th {
   margin-left:450px;  
   margin-bottom:200px;  
   margin-top:-90px; 
-  
+  display:none;
 
    }  
    h2{  
@@ -395,21 +461,16 @@ position:absolute;
      font-size:35px;
    }  
    h1{  
- color:white;  
- background-color:navy;  
+ color:#000;  
+ background-color:#CCCCFF;  
  position:absolute;  
  padding:5px 30px;  
  border-radius:5px;  
- margin-left:730px;  
+ margin-left:710px;  
  margin-top:185px;  
- font-size:25px;  
+ font-size:25px; 
    }  
-   .ns{  
-  width:40%;  
-  margin-left:110px;
-  font-size:24px;
-
-   }  
+    
    .aoaa{  
   position:absolute;  
   margin-left:590px;  
@@ -426,7 +487,7 @@ position:absolute;
    }  
   .st{  
   width:50%;  
-    margin-top:100px;
+    margin-top:105px;
   font-size:17px;  
     position: absolute;
     margin-left:755px; 
@@ -490,9 +551,8 @@ th, td {
     padding: 5px 3px;  
       
 }  
-th {  
-    background-color: #d7f0ff;  
-}  
+
+  
    .img {  
    position:absolute;  
    display: block;  
@@ -517,13 +577,7 @@ th {
   border:none;  
   padding:2px;  
    }  
-   .name{  
- border:none;  
- background-color:transparent;  
- text-align:left;  
- padding:2px;  
-
-   }  
+    
    
    
     
@@ -536,14 +590,8 @@ th {
     text-align: right;
     font-variant-numeric: tabular-nums;
 }
-.issueDate{
-  position:absolute;
-  color:black;
-  font-weight:bold;
-  margin-top:-625px;
-  font-size:22px;
-  margin-left:1400px;
-}
+
+
 .dakhilno{
   position:absolute;
   color:black;
@@ -603,9 +651,7 @@ th, td {
     padding: 5px 3px;  
       
 }  
-th {  
-    background-color: #d7f0ff;  
-}  
+  
    .img {  
    position:absolute;  
    display: block;  
@@ -646,16 +692,8 @@ th {
   margin-top:300px;  
   margin-left:1420px;  
    }  
-   .bgimg{  
-  width:47%;  
-  opacity:15%;  
-  position:absolute;  
-  margin-left:450px;  
-  margin-bottom:200px;  
-  margin-top:-90px; 
   
-
-   }  
+   
    h2{  
 position:absolute;  
   margin-left:595px;  
@@ -663,22 +701,8 @@ position:absolute;
   color:red;
      font-size:35px;
    }  
-   h1{  
- color:white;  
- background-color:navy;  
- position:absolute;  
- padding:5px 30px;  
- border-radius:5px;  
- margin-left:730px;  
- margin-top:185px;  
- font-size:25px;  
-   }  
-   .ns{  
-  width:80%;  
-  margin-left:110px;
-  font-size:24px;
-
-   }  
+   
+   
    .aoaa{  
   position:absolute;  
   margin-left:590px;  
@@ -752,9 +776,7 @@ th, td {
     padding: 5px 3px;  
       
 }  
-th {  
-    background-color: #d7f0ff;  
-}  
+  
    .img {  
    position:absolute;  
    display: block;  
@@ -798,13 +820,7 @@ th {
     text-align: right;
     font-variant-numeric: tabular-nums;
 }
-.issueDate{
-  position:absolute;
-  color:black;
-  font-weight:bold;
-  margin-top:-625px;
-  font-size:22px;
-  margin-left:1400px;
+
 }
 .dakhilno{
   position:absolute;
@@ -865,9 +881,7 @@ th, td {
     padding: 5px 3px;  
       
 }  
-th {  
-    background-color: #d7f0ff;  
-}  
+  
    .img {  
    position:absolute;  
    display: block;  
@@ -908,16 +922,10 @@ th {
   margin-top:300px;  
   margin-left:1420px;  
    }  
-   .bgimg{  
-  width:47%;  
-  opacity:15%;  
-  position:absolute;  
-  margin-left:450px;  
-  margin-bottom:200px;  
-  margin-top:-90px; 
+   
   
 
-   }  
+   
    h2{  
 position:absolute;  
   margin-left:595px;  
@@ -925,16 +933,7 @@ position:absolute;
   color:red;
      font-size:35px;
    }  
-   h1{  
- color:white;  
- background-color:navy;  
- position:absolute;  
- padding:5px 30px;  
- border-radius:5px;  
- margin-left:730px;  
- margin-top:185px;  
- font-size:25px;  
-   }  
+  
    
    .aoaa{  
   position:absolute;  
@@ -1009,9 +1008,7 @@ th, td {
     padding: 5px 3px;  
       
 }  
-th {  
-    background-color: #d7f0ff;  
-}  
+  
    .img {  
    position:absolute;  
    display: block;  
@@ -1050,5 +1047,4 @@ th {
    
 }
 
- 
 </style>
