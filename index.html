@@ -1,1 +1,116 @@
-hellow word
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trollify Industry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            scroll-behavior: smooth;
+        }
+        /* Fixed Logo and School Name */
+        #fixed-header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        #fixed-header img {
+            height: 60px;
+            border-radius: 50%;
+        }
+        #fixed-header h1 {
+            color: #fff;
+            margin-left: 10px;
+            font-size: 28px;
+            text-shadow: 2px 2px 5px #000;
+        }
+        section {
+            padding: 80px 50px 50px;
+            margin-top: 100px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background: #b21f1f;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff1e56;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid #fff;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            #fixed-header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fixed Logo and School Name -->
+<div id="fixed-header">
+    <img src="https://i.postimg.cc/X7p0cSLV/20240327-135314.jpg" alt="School Logo"> <!-- Replace with your logo URL -->
+    <h1>Sahaja Nirmal Public School</h1>
+</div>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Sahaja Nirmal Public School, where we nurture talent and build the future. Our mission is to provide holistic education with a focus on excellence.</p>
+    <button onclick="alert('Thank you for your interest!')">Learn More</button>
+</section>
+
+<!-- Admission Section -->
+<section id="admission">
+    <h2>Admissions</h2>
+    <p>Join the Sahaja Nirmal family! Admissions are open for Nursery to Class 12th. We offer a nurturing environment for your child's all-round development.</p>
+    <button onclick="alert('Admission Form Coming Soon!')">Apply Now</button>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p><b>Address:</b> Sahaja Nirmal Public School, Khamra, MP, India</p>
+    <p><b>Phone:</b> +91 9201417780</p>
+    <p><b>Email:</b> snpskhamra@gmail.com</p>
+    <button onclick="alert('Thank you! We will get back to you.')">Get in Touch</button>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Sahaja Nirmal Public School | Designed by Prem Janghela | Power by Trollify Industry
+</footer>
+
+</body>
+</html>
