@@ -585,7 +585,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Total Students</div>
-                            <div class="number count-to" data-from="0" data-to="0" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="" data-to="" data-speed="15" data-fresh-interval="20" id="B1">Loading...</div>
                         </div>
                     </div>
                 </div>
@@ -596,7 +596,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Total Teachers</div>
-                            <div class="number count-to" data-from="0" data-to="0" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="0" data-speed="15" data-fresh-interval="20" id="B2">Loading...</div>
                         </div>
                     </div>
                 </div>
@@ -607,7 +607,7 @@
                         </div>
                         <div class="content">
                             <div class="text">FEE PAID</div>
-                            <div class="number count-to" data-from="0" data-to="000" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="000" data-speed="1000" data-fresh-interval="20" id="B3">Loading...</div>
                         </div>
                     </div>
                 </div>
@@ -825,6 +825,58 @@
             </div>
         </div>
     </section>
+  
+   <script>
+    // Aapka Google Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby22rBKM8e_RjK4tCbwSAJTM9YIv9crVhHNM8yHpSFCI4FUW2K18e-aJ_YRAeTqcD3y/exec';
+
+    // Google Sheet se data fetch karne ka function
+    async function fetchData() {
+      try {
+        const response = await fetch(scriptURL);
+        const data = await response.json();
+
+        // Har cell ID ke liye data display karne ka code
+        Object.keys(data).forEach(cellId => {
+          const element = document.getElementById(cellId);
+          if (element) {
+            element.textContent = data[cellId] || 'No Data';
+          }
+        });
+      } catch (error) {
+        console.error('Data fetch karne me error:', error);
+      }
+    }
+
+    // Page load hone par data fetch kare
+    fetchData();
+  </script>
+  
+  <!----- isi uper wali script ka code gs hai
+
+function doGet(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+  const dataRange = sheet.getDataRange();
+  const data = dataRange.getValues();
+
+  // Create an object to store data based on cell IDs like "A1", "B2", etc.
+  let dataObject = {};
+  for (let i = 0; i < data.length; i++) {
+    for (let j = 0; j < data[i].length; j++) {
+      const cellId = sheet.getRange(i + 1, j + 1).getA1Notation();
+      dataObject[cellId] = data[i][j];
+    }
+  }
+  return ContentService.createTextOutput(JSON.stringify(dataObject)).setMimeType(ContentService.MimeType.JSON);
+}
+
+
+
+
+
+------>
+  
+  
 
     <!-- Jquery Core Js -->
     <script src="https://trollifyindustry.github.io/premjanghela/plugins/jquery/jquery.min.js"></script>
