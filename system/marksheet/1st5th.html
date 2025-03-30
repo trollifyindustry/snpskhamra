@@ -9,7 +9,7 @@
 </head>
 
 <div class="inone" >
-    <h2>Marksheet Print System</h2>
+    <h2>1ST TO 4TH Marksheet Print System</h2>
     <button onclick="fetchData()" class="inone" >Load Marksheet</button>
     <button onclick="printData()" class="inone" >Print</button>
   </div>
@@ -56,26 +56,26 @@
                         invoice.innerHTML = `
                   <body> 
                    <div class="r" >  
-                   <img class="img"  src="https://lh3.googleusercontent.com/d/1uwPv9QU2JT_SqST8AR1ZIiOHZfCByR24=s0">  
-                   <img class="photo" src="${row[12]}">    <br> <br><br><br><br><h2ACADEMIC SESSION 2024-25></h2> 
+                   <img class="img"  src="https://lh3.googleusercontent.com/d/1xeuQf5iIFgPqIjd1mm2YkCxZ3_P-iFOE=s0">  
+                    <br> <br><br><br><br><h2ACADEMIC SESSION 2024-25></h2> 
                    <h1REPORT CARD></h1>
 
-                  <br><br> <br><br><br><br><br><br>
+                  <br><br> <br><br>
     <table class="nametable">
                    <tr>
-                       <th class="name" width="180px">STUDENT NAME</th>
-                       <td class="name" width="400px"> : ${row[0]}</td>
+                       <th class="name" width="200px">STUDENT'S NAME</th>
+                       <td class="name" width="640px"> : ${row[0]}</td>
                        <th class="name" width="175px">ROLL NUMBER</th>
                        <td class="name"> : ${row[1]}</td>
                    </tr>
                    <tr>
-                       <th class="name">FATHER NAME</th>
+                       <th class="name">FATHER'S NAME</th>
                        <td class="name"> : ${row[2]}</td>
                        <th class="name">CLASS</th>
                        <td class="name"> : ${row[6]}</td>
                    </tr>
                    <tr>
-                       <th class="name">MOTHER NAME</th>
+                       <th class="name">MOTHER'S NAME</th>
                        <td class="name"> : ${row[3]}</td>
                        <th class="name">SCHOLAR NO.</th>
                        <td class="name"> : ${row[9]}</td>
@@ -83,151 +83,130 @@
                    <tr>
                        <th class="name">DATE OF BIRTH</th>
                        <td class="name"> : ${row[4]}</td>
-                       <th class="name">GANDER</th>
+                       <th class="name">GENDER</th>
                        <td class="name"> : ${row[8]}</td>
                    </tr>
                 </table>
                    
                    
-                   <table class="inone" >   
+                   
+                   
+                   
+                   
+                   <br><br><br><br><br><br><br><br><br>
+                   
+                   <h3 class="aoaa" >ASSESSMENT SHEET</h3>
+                    <table class="mtt"> 
                    <tr>  
-                   <td class="name" ><b>STUDENT NAME</b><i class="nam">..</i>:<i class="nam">..</i>${row[0]}</td><td class="name" ><b>ROLL NUMBER</b> <i class="nam">.....</i>:<i class="nam">..</i>${row[1]}</td><td class="name" ></td><td class="name" ></td></td><td class="name" ></td><td class="nam" >.</td><td class="nam"  >..............</td>    
-                   </tr>  
-                   <tr>   
-                   <td class="name" ><b>FATHER NAME</b><i class="nam">...</i> :<i class="nam">...</i>${row[2]}</td><td class="name" ><b>CLASS</b><i class="nam">....................</i>:<i class="nam">..</i>${row[6]}</td><td class="name" ></td>   
-                   </tr>  
-                   <tr>   
-                   <td class="name" ><b>MOTHER NAME</b><i class="nam">..</i> :<i class="nam">..</i> ${row[3]}</td>  <td class="name" ><b>SCHOLAR NO.</b> <i class="nam">......</i>:<i class="nam">..</i>${row[9]}</td><td class="name" ></td>   
-                   </tr>  
-                   <tr>   
-                   <td class="name" ><b>DATE OF BIRTH</b><i class="nam">..</i>:<i class="nam">..</i> ${row[4]}</td> <td class="name" ><b>GANDER</b> <i class="nam">................</i>:<i class="nam">..</i>${row[8]} </td><td class="name" ></td>   
-                   </tr>  
-                   </table> 
-                   
-                   
-                   
-              
-                   
-                   
-                   
-                   
-                   
-                   <br><br><br><br><br><br><br><br><br><br>
-                   
-                   <h3 class="aoaa" >ASSESSMENT OF ACADEMIC AREAS</h3> <br>
-                   <table class="mtt"> 
-                   <tr>  
-                   <th rowspan="3">S.N.</th>  
-                   <th rowspan="3">SUBJECT</th>  
-                   <th colspan="3" bgcolor="#add8e6">MONTHLY EVALUATION</th>  
-                   <th colspan="3" bgcolor="#f0e68c">HALF YEARLY EVALUATION</th>  
-                   <th colspan="2" bgcolor="#90ee90">WRITTEN EVALUATION</th>  
-                   <th colspan="3" bgcolor="#87cefa">ANNUAL PROJECT</th>  
-                   <th rowspan="3">TOTAL SCORE</th>  
-                   <th rowspan="3">GRADE</th>  
-                   <td class="nam" >....</td>  
+                   <th rowspan="3">Sr.N.</th>  
+                   <th rowspan="3" width="200px">SUBJECT</th>  
+                   <th colspan="2" rowspan="2">MONTHLY <br> EVALUATION <br> (10 MARKS)</th>  
+                   <th colspan="2" rowspan="2">HALF YEARLY <br> EVALUATION <br> (20 MARKS)</th>  
+                   <th colspan="4">ANNUAL EVALUATION (70 MARKS)</th>       
+                   <th rowspan="3">TOTAL MARKS (100)</th>  
+                   <th rowspan="3">OVERALL GRADE</th> <td class="nam" >...</td>  
                    </tr>  
                    <tr>  
-                   <th colspan="3">SCORE/SURCHARGE<br>40/10 NUMBER</th>  
-                   <th colspan="3">SCORE/SURCHARGE<br>60/20 NUMBER</th>  
-                   <th rowspan="2">SCORE<br>60 NUMBER</th>  
-                   <th rowspan="2">GRADE</th>  
-                   <th colspan="3">SCORE/SURCHARGE<br>40/10 NUMBER</th>  
+                   <th colspan="2">WRITTEN  <br> (60 MARKS)</th>  
+                   <th colspan="2">CO-CURRICULAR <br> ACTIVITIES <br>(10 MARKS)</th>    
                    </tr>  
                    <tr>  
-                   <th>SCORE</th>  
-                   <th>SURCH</th>  
+                   <th>MARKS OBTAINED</th>  
                    <th>GRADE</th>  
-                   <th>SCORE</th>  
-                   <th>SURCH</th>  
+                   <th>MARKS OBTAINED</th>  
                    <th>GRADE</th>  
-                   <th>SCORE</th>  
-                   <th>SURCH</th>  
+                   <th>MARKS OBTAINED</th>  
+                   <th>GRADE</th>  
+                   <th>MARKS OBTAINED</th>  
                    <th>GRADE</th>  
                    </tr>  
                    <tr>  
                    <td>1</td>  
                    <td>HINDI</td>  
-                   <td>${row[38]}</td><td>${row[39]}</td> <td>${row[40]}</td>  
-                   <td>${row[56]}</td> <td>${row[57]}</td> <td>${row[58]}</td>  
+                   <td>${row[39]}</td> <td>${row[40]}</td>  
+                   <td>${row[57]}</td> <td>${row[58]}</td>  
                    <td>${row[74]}</td> <td>${row[75]}</td>  
-                   <td>${row[86]}</td> <td>${row[87]}</td> <td>${row[88]}</td>  
+                  <td>${row[87]}</td> <td>${row[88]}</td>  
                    <td>${formatNumber(row[104])}</td> <td>${row[105]}</td>  
                    </tr>  
                    <tr>  
                    <td>2</td>  
                    <td>ENGLISH</td>  
-                   <td>${row[41]}</td> <td>${row[42]}</td> <td>${row[43]}</td>  
-                   <td>${row[59]}</td> <td>${row[60]}</td> <td>${row[61]}</td>  
+                    <td>${row[42]}</td> <td>${row[43]}</td>  
+                   <td>${row[60]}</td> <td>${row[61]}</td>  
                    <td>${row[76]}</td> <td>${row[77]}</td>  
-                   <td>${row[89]}</td> <td>${row[90]}</td> <td>${row[91]}</td>  
+                  <td>${row[90]}</td> <td>${row[91]}</td>  
                    <td>${formatNumber(row[106])}</td> <td>${row[107]}</td>  
                    </tr>  
                    <tr>  
                    <td>3</td>  
                    <td>MATHEMATICS</td>  
-                   <td>${row[44]}</td> <td>${row[45]}</td> <td>${row[46]}</td>  
-                   <td>${row[62]}</td> <td>${row[63]}</td> <td>${row[64]}</td>  
+                    <td>${row[45]}</td> <td>${row[46]}</td>  
+                   <td>${row[63]}</td> <td>${row[64]}</td>  
                    <td>${row[78]}</td> <td>${row[79]}</td>  
-                   <td>${row[92]}</td> <td>${row[93]}</td> <td>${row[94]}</td>  
+                  <td>${row[93]}</td> <td>${row[94]}</td>  
                    <td>${formatNumber(row[108])}</td> <td>${row[109]}</td>  
                    </tr>  
                    <tr>  
                    <td>4</td>  
-                   <td>ORAL</td> 
-                   <td>${row[47]}</td> <td>${row[48]}</td> <td>${row[49]}</td>  
-                   <td>${row[65]}</td> <td>${row[66]}</td> <td>${row[67]}</td>  
+                   <td>EVS</td>  
+                    <td>${row[48]}</td> <td>${row[49]}</td>  
+                   <td>${row[66]}</td> <td>${row[67]}</td>  
                    <td>${row[80]}</td> <td>${row[81]}</td>  
-                   <td>${row[95]}</td> <td>${row[96]}</td> <td>${row[97]}</td>  
+                  <td>${row[96]}</td> <td>${row[97]}</td>  
                    <td>${formatNumber(row[110])}</td> <td>${row[111]}</td>  
                    </tr>  
                    <tr>  
                    <td>5</td>  
-                   <td>DRAWNING</td>  
-                   <td>${row[50]}</td> <td>${row[51]}</td> <td>${row[52]}</td>  
-                   <td>${row[68]}</td> <td>${row[69]}</td> <td>${row[70]}</td>  
+                   <td>DRAWING</td>  
+                    <td>${row[51]}</td> <td>${row[52]}</td>  
+                   <td>${row[69]}</td> <td>${row[70]}</td>  
                    <td>${row[82]}</td> <td>${row[83]}</td>  
-                   <td>${row[98]}</td> <td>${row[99]}</td> <td>${row[100]}</td>  
+                  <td>${row[99]}</td> <td>${row[100]}</td>  
                    <td>${formatNumber(row[112])}</td> <td>${row[113]}</td>  
                    </tr>  
                    <tr>  
                    <td>6</td>  
                    <td>PROJECT</td>  
-                   <td>${row[53]}</td> <td>${row[54]}</td> <td>${row[55]}</td>  
-                   <td>${row[71]}</td> <td>${row[72]}</td> <td>${row[73]}</td>  
+                    <td>${row[54]}</td> <td>${row[55]}</td>  
+                   <td>${row[72]}</td> <td>${row[73]}</td>  
                    <td>${row[84]}</td> <td>${row[85]}</td>  
-                   <td>${row[101]}</td> <td>${row[102]}</td> <td>${row[103]}</td>  
+                   <td>${row[102]}</td> <td>${row[103]}</td>  
                    <td>${formatNumber(row[114])}</td> <td>${row[115]}</td>  
                    </tr>  
                    </table>  
-                   <img class="bgimg" src="https://lh3.googleusercontent.com/d/1WcuFlI4TUpXJRsFNPzMW8ySMlujqEycQ=s0">  
-                   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                   <table class="lt" >  <tr>  
-                   <td width="150px">75-100%</td>  
-                   <td width="150px">A - GRADE</td>  
-                   <td width="150px">EXCELLENT</td>  
-                   </tr>  
-                   <tr>  
-                   <td >60-74%</td>  
-                   <td>B - GRADE</td>  
-                   <td>BEST</td>  
-                   </tr>  
-                   <tr>  
-                   <td>45-59%</td>  
-                   <td>C - GRADE</td>  
-                   <td>GOOD</td>  
-                   </tr>  
-                   <tr>  
-                   <td>33-44%</td>  
-                   <td>D - GRADE</td>  
-                   <td>GENERAL</td>  
-                   </tr>  
-                   <tr>  
-                   <td>BELOW 33%</td>  
-                   <td>E - GRADE</td>  
-                   <td>IMPROVABLE</td>  
-                   </tr>
                    
+                   
+                   <img class="bgimg" src="https://lh3.googleusercontent.com/d/1WcuFlI4TUpXJRsFNPzMW8ySMlujqEycQ=s0">  
+                   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                   
+                   <table class="lt" >  <tr>  
+                   <th width="70px">GRADE</th>  
+                   <th width="150px">REMARK</th>  
+                     
+                   </tr>  
+                   <tr>  
+                   <td classs="font-size2" >A+</td>  
+                   <td>EXCELLENT</td>
+                  </tr>  
+                   <tr>  
+                   <td classs="font-size2">A</td>                     
+                   <td classs="font-size2">GOOD</td>  
+                   </tr> 
+                   <td classs="font-size2">B+</td>                     
+                   <td classs="font-size2">GOOD</td>  
+                   </tr>
+                   <td classs="font-size2">B</td>                     
+                   <td>AVERAGE</td>  
+                   </tr> 
+                   </tr>
+                   <td classs="font-size2">C</td>                     
+                   <td>BELOW AVERAGE</td>  
+                   </tr> 
+                   <td classs="font-size2">D</td>                     
+                   <td classs="font-size2">FAIL</td>  
+                   </tr> 
+                  
                    </table>  
                    </div>  
                    
@@ -235,20 +214,24 @@
                    
                    <table class="st">
     <tr>
-        <td><b>TOTAL WORKING DAYS : </b>${row[18]}</td>
+        <td  width=""><b>TOTAL WORKING DAYS: </b>${row[18]}</td>
         
-        <td width=""><b>PROMOTED TO CLASS : </b>${row[17]}</td>
+        <td width=""><b>PROMOTED TO CLASS: </b>${row[17]}</td>
         
-        <td><b>TOTAL SCORE: </b>${formatNumber(row[13])}</td>
-        <th rowspan="2">RESULT : ${row[16]}</th>
+        <td  width=""><b>TOTAL SCORE: </b>${formatNumber(row[13])}</td>
+        <th rowspan="2" style="text-align:center;">RESULT : ${row[16]}</th>
     </tr>
     <tr>
-        <td><b>TOTAL ATTENDANCE : </b>${row[19]}</td>
+        <td><b>TOTAL ATTENDANCE: </b>${row[19]}</td>
         
-        <td><b>GRADE : </b> ${row[15]}</td>
         
-        <td><b>PERCENT : </b>${formatNumber(row[14])}%</td>
+        <td  width=""><b>ATTENDANCE PERCENTAGE: </b>${formatNumber(row[14])}% </td>
+        
+        <td><b>GRADE : </b>${row[15]}</td>
     </tr>
+    <tr>
+      <td colspan="4"><b>Class Teacher’s Remarks:</b> Very Good keep it up.</td>
+     </tr>
     
     
 </table>
@@ -258,14 +241,26 @@
                    
                    
                    
-               
-
-
-<p class="sot">Signature of Teacher</p>
-<p class="sot2">Signature of Principal</p>
-<p class="dakhilno"><b></b> <b style="color:red;"></b></p>
+              
 <p class="issueDate">Issue Date :${row[10]}</p>
 <img class="qr" src="${row[20]}">
+ <img class="studentphoto" src="${row[12]}">
+ <p class="prem-janghela"> Prepared through <b>TROLLIFY INDUSTRY,</b> designed for SNPS by <b>Prem Janghela</b>,9752776923 <p>
+ 
+ <table class="singnatureTable">
+    <tr>
+        <td class="singnatureTd"><b>Place:</b> Khamra</td>
+        <td class="singnatureTd">${row[10]}</td>
+        <td class="singnatureTd">${row[11]}</td>
+        <td class="singnatureTd">${row[20]}</td>
+    </tr>
+    <tr>
+        <td class="singnatureTd"><b>Date:</b> 29/03/2025</td>
+        <td class="singnatureTd"><b>CLASS TEACHER</b></td>
+        <td class="singnatureTd"><b>ACADEMIC INCHARGE</b></td>
+        <td class="singnatureTd"><b>PRINCIPAL</b></td>
+    </tr>
+ </table>
 
                         
                       </body> 
@@ -298,14 +293,49 @@
 
 </html>
 
-<style>
 
- 
+<style>
+.singnatureTd{
+  border:none;
+  text-align: center;
+  padding:1px;
+  font-size:18px;
+}
+.singnatureTable{
+  width:76%;
+  position:absolute;
+  margin-top:271px;  
+  margin-left:300px;
+}
+.prem-janghela{
+  position:absolute;
+  margin-top:354px;  
+  margin-left:50px;
+  font-size:13px;
   
+}
+ .studentphoto{  
+  width:140px;  
+  height:180px;  
+  position:absolute;  
+  border:1px solid black;  
+  border-radius:3px;  
+  margin-top:-480px;  
+  margin-left:1271px;
+  
+   }  
+ 
+.font-size{
+  font-size:18px;
+} 
+.font-size2{
+   font-size:13px;
+}
 .name{  
  background-color:transparent;  
  text-align:left;  
- padding:2px;  
+ padding:3px;
+ border:none;
 
    } 
 .nametable{  
@@ -386,6 +416,18 @@
   width:3000px;
   
 }
+  
+.aoaa{  
+  position:absolute;  
+  margin-left:650px;  
+  margin-top:70px; 
+  font-size:20px;
+   }  
+    
+  
+  
+
+
   body {  
         font-family: Arial, sans-serif; 
         
@@ -396,7 +438,8 @@
  }  
 th, td {  
     border: 1px solid black;  
-    padding: 5px 3px;  
+    padding: 3px 3px; 
+    font-size:;
       
 }  
 th {  
@@ -426,23 +469,10 @@ th {
   border:none;  
   padding:2px;  
    }  
-   .name{  
- border:none;  
- background-color:transparent;  
- text-align:left;  
- padding:2px;  
+   
 
-   }  
-   .photo{  
-  width:140px;  
-  height:180px;  
-  position:absolute;  
-  border:1px solid black;  
-  border-radius:3px;  
-  margin-top:300px;  
-  margin-left:1420px;
+   
   
-   }  
    .bgimg{  
   width:47%;  
   opacity:15%;  
@@ -471,27 +501,23 @@ position:absolute;
  font-size:25px; 
    }  
     
-   .aoaa{  
-  position:absolute;  
-  margin-left:590px;  
-  margin-top:70px; 
-  font-size:26px;
-   }  
+   
    .lt{  
-  width:40%;  
-  font-size:18px;
-  margin-top:195px;
+  width:15%;  
+  font-size:14px;
+  margin-top:230px;
   margin-left:65px;
-  text-align:left;
-     
+  padding:1px; 
+  text-align:center;
    }  
+
   .st{  
-  width:50%;  
-    margin-top:105px;
-  font-size:17px;  
+    width:76%;  
+    margin-top:140px;
+    font-size:17px;  
     position: absolute;
-    margin-left:755px; 
-    text-align:center;
+    margin-left:300px; 
+    text-align:left;
    }   
   
 
@@ -676,23 +702,8 @@ th, td {
   border:none;  
   padding:2px;  
    }  
-   .name{  
- border:none;  
- background-color:transparent;  
- text-align:left;  
- padding:2px;  
-
-   }  
-   .photo{  
-  width:140px;  
-  height:180px;  
-  position:absolute;  
-  border:1px solid black;  
-  border-radius:3px;  
-  margin-top:300px;  
-  margin-left:1420px;  
-   }  
   
+   
    
    h2{  
 position:absolute;  
@@ -703,26 +714,7 @@ position:absolute;
    }  
    
    
-   .aoaa{  
-  position:absolute;  
-  margin-left:590px;  
-  margin-top:70px; 
-  font-size:26px;
-   }  
-   .lt{  
-  width:40%;  
-  font-size:18px;
-  margin-top:195px;
-  margin-left:65px;
-  text-align:left;
-     
-   }  
-   
-  
-
-
-
-
+    
 
 
 
@@ -801,27 +793,15 @@ th, td {
   border:none;  
   padding:2px;  
    }  
-   .name{  
- border:none;  
- background-color:transparent;  
- text-align:left;  
- padding:2px;  
-
-   }  
    
    
     
     
-    
-   
-}
-
  .vm {
     text-align: right;
     font-variant-numeric: tabular-nums;
 }
 
-}
 .dakhilno{
   position:absolute;
   color:black;
@@ -906,13 +886,7 @@ th, td {
   border:none;  
   padding:2px;  
    }  
-   .name{  
- border:none;  
- background-color:transparent;  
- text-align:left;  
- padding:2px;  
-
-   }  
+   
    .photo{  
   width:140px;  
   height:180px;  
@@ -935,21 +909,6 @@ position:absolute;
    }  
   
    
-   .aoaa{  
-  position:absolute;  
-  margin-left:590px;  
-  margin-top:70px; 
-  font-size:26px;
-   }  
-   .lt{  
-  width:40%;  
-  font-size:18px;
-  margin-top:195px;
-  margin-left:65px;
-  text-align:left;
-     
-   }  
-  
   
 
 
@@ -1033,13 +992,7 @@ th, td {
   border:none;  
   padding:2px;  
    }  
-   .name{  
- border:none;  
- background-color:transparent;  
- text-align:left;  
- padding:2px;  
-
-   }  
+  
    
    
     
