@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheet Data Fetcher</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        button { margin-top: 10px; padding: 10px; cursor: pointer; display:;}
+        .bg{
+          width:100%;
+        }
+         table{ 
+           width:96%;
+            position:absolute;
+            margin-top:-400px;
+            font-size:12px; 
+            
+         }
+         
+         @media print {
+         button{ display:none;}
+         input{ display:none;}
+         
+         table{ 
+         width:90%;
+         position:absolute;
+         margin-top:-860px;
+         margin-left:35px;
+         font-size:12px;  
+         display:table;
+         border:1px solid black ;}
+         
+         .photo{
+          position:absolute;
+          margin-top:135px;
+          border:1px solid black;
+          margin-left:-140px;
+         }
+         
+         }
+         @page {
+
+         margin: 1px 1px 1px 1px; /* Set margins */
+         }
+         
+         
+    </style>
+</head>
+<body>
+
+    <input type="text" id="idNumber" placeholder="Enter ID Number">
+    <button onclick="fetchData()">Search</button>
+    <button onclick="printData()">Print</button>
+    
+   <div id="tableRow">
+   <img src="https://lh3.googleusercontent.com/d/1Okk5kNTNEKq-Mm5jAytcDYLriBB_9iL0=s0" class="bg" >
+   <img src="#" class="photo" width="70px" height="90px"  alt="Photo"  >
+    <table  >
+    <tr>
+    <th width="25%" >Student's Name:</th><td id="col1" width="30%" ></td><th width="20%" >Scholar No. </th><td id="col7"></td>
+    </tr>
+    <tr>
+    <th>Class</th><td id="col4"></td><th>Admission Date:</th><td id="col10"></td>
+    </tr>
+    <tr>
+    <th>Father's Name:</th><td  colspan="3" id="col14">
+    </tr>
+    <tr>
+    <th>Mother's Name:</th><td colspan="3"  id="col15">
+    </tr>
+    <tr>
+    <th>Catagory:</th><td id="col5"></td><td></td><td></td>
+    </tr>
+    </tr>
+    <tr>
+    <th>Date of Birth:</th><td id="col2"></td><th>Gender:</th><td id="col3"></td>
+    </tr>
+    </tr>
+    <tr>
+    <th>Admission Fee:</th><td id="col6"></td> <td></td><td></td>
+    </tr>
+    </tr>
+    <tr>
+    <th >Adress:</th><td colspan="3"  id="col11"></td>
+    </tr>
+    </tr>
+    <tr>
+    <th>Phone:</th><td colspan="3" id="col12"></td>
+    </tr>
+    </tr>
+    <tr>
+    <th>Email:</th><td colspan="3"  id="col13"></td>
+    </tr>
+    </tr>
+    <tr>
+     <td colspan="4">कृपया नीचे दिए गए दस्तावेजों में से जो भी संलग्न किए हैं, उन्हें "हाँ" पर ✔️ टिक करें: / Please tick "Yes" for the documents you have attached from the list below:</td>
+    </tr>
+    <tr>
+      <td>BPL Card</td> <td></td><td>Family Id</td> <td></td>
+    </tr>
+    <tr>
+    <td>Birth Certificate</td> <td></td><td>Caste Certificate</td> <td></td>
+    </tr>
+    <tr>
+    <td>Aadhar Card</td> <td></td><td>Bank Account</td> <td></td>
+    </tr>
+    
+    
+    </table>
+    </div>
+    <script>
+        function fetchData() {
+            let id = document.getElementById("idNumber").value;
+            if (!id) {
+                Swal.fire('Error!', 'Please enter an ID number.', 'error');
+                return;
+            }
+            Swal.fire({ title: 'Fetching Data...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
+
+            fetch(`https://script.google.com/macros/s/AKfycbz-2Y8jvQ0ZkAcarn_xcJMbPCuTz4-fYdQos4FawHJy4L-3l9Ujivpl5RpmLUhOEDyO/exec?id=${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    Swal.close();
+                    if (data.status === 'success') {
+                        let row = data.row; // Row data as array
+
+                        for (let i = 0; i < row.length; i++) {
+                            let cell = document.getElementById(`col${i}`);
+                            if (cell) cell.innerText = row[i];
+                        }
+                    } else {
+                        Swal.fire('Not Found', 'No data found for this ID.', 'warning');
+                    }
+                })
+                .catch(error => {
+                    Swal.fire('Error!', 'Something went wrong.', 'error');
+                });
+        }
+
+        function printData() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+
+
+<!---function doGet(e) {
+  var sheet = SpreadsheetApp.openById("YOUR_SHEET_ID").getSheetByName("Sheet1");
+  var data = sheet.getDataRange().getValues();
+  
+  var id = e.parameter.id;
+  if (!id) return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "No ID provided" }));
+
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0] == id) { 
+      return ContentService.createTextOutput(JSON.stringify({ status: "success", row: data[i] }))
+             .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({ status: "not_found", message: "Data not found" }))
+         .setMimeType(ContentService.MimeType.JSON);
+}------>
