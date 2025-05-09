@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Prem Janghela</title>
+    <title>SNPS Khamra | Design trollify Industry | 975-277-6923</title>
   <!-- Favicon-->
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
-  
   <!-- Google Fonts -->
-  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"> </script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
   
@@ -214,17 +213,17 @@
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SNPS KHAMRA</div>
-                    <div class="email">snpskhamra@gmail.com</div>
+                    <div class="email">snpskhamra@gmail.com</div> 
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">group</i>Teachers</a></li>
-                             <li><a href="javascript:void(0);"><i class="material-icons">group</i>Student</a></li>
+                             <li><a href="javascript:void(0);"><i class="material-icons">group</i></a></li>
 							<li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i><button id="logoutBtn">Logout</button></a></li>
                         </ul>
                     </div>
                 </div>
@@ -877,11 +876,6 @@ function doGet(e) {
   }
   return ContentService.createTextOutput(JSON.stringify(dataObject)).setMimeType(ContentService.MimeType.JSON);
 }
-
-
-
-
-
 ------>
   
   
@@ -928,6 +922,73 @@ function doGet(e) {
     
 	<!-- Demo Js -->
     <script src="https://trollifyindustry.github.io/premjanghela/js/demo.js"></script>
+  
+  <!--Page-Password-Script-->
+  <script>
+    async function authenticate() {
+      const storedTime = localStorage.getItem('authTime');
+      const now = new Date().getTime();
+
+      if (storedTime && now - storedTime < 3600000) {
+        return;
+      }
+
+      localStorage.removeItem('authTime');
+
+      let authenticated = false;
+
+      while (!authenticated) {
+        const { value: password } = await Swal.fire({
+          title: '𝐖𝐄𝐋𝐂𝐎𝐌𝐄 ',
+          input: 'password',
+          inputLabel: 'Sahaja Nirmal Public School Khamra',
+          inputPlaceholder: 'Enter your password ',
+          inputAttributes: {
+            maxlength: 10,
+            autocapitalize: 'off',
+            autocorrect: 'off'
+          },
+          showCancelButton: false,
+          allowOutsideClick: false,
+          confirmButtonText: '𝗙𝗼𝗹𝗹𝗼𝘄 𝗺𝗲╰┈➤'
+        });
+
+        if (password === "417780") {
+          localStorage.setItem('authTime', new Date().getTime());
+          authenticated = true;
+          await Swal.fire({
+            icon: 'success',
+            title: 'Access Granted!',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        } else {
+          await Swal.fire({
+            icon: 'error',
+            title: 'Wrong Password',
+            text: 'Please try again.'
+          });
+        }
+      }
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem('authTime');
+      Swal.fire({
+        icon: 'info',
+        title: 'Logged Out',
+        text: 'You have been logged out.',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        location.reload(); // Refresh page to prompt password again
+      });
+    });
+
+    window.onload = authenticate;
+  </script>
+  <!--End-Page-Password-Script-->
+
 </body>
 
 </html>
