@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>prem janghela- Material Design</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Colorpicker Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/dropzone/dropzone.css" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- noUISlider Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="https://trollifyindustry.github.io/premjanghela/css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="https://trollifyindustry.github.io/premjanghela/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Trollify Industry</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">TrollifyEdu Softwere</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">7</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">person_add</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>Prem Janghela joined</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 04/04/2025
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">flag</i>
+                            <span class="label-count">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">TASKS</li>
+                            <li class="body">
+                                <ul class="menu tasks">
+                                    
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Dashboard Task
+                                                <small>92%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="https://i.ibb.co/RkBPyrGR/images.png" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TrollifyEdu</div>
+                    <div class="email">trollifyindustry@gmail.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Users</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i><button id="logoutBtn">Logout</button></a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="material-icons">home</i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">map</i>
+                            <span>Maps</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">Google Map</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="#">
+                            <i class="material-icons">update</i>
+                            <span>Changelogs | Prem Janghela</span>
+                        </a>
+                    </li>
+                    <li class="header">LABELS</li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <i class="material-icons col-red">donut_large</i>
+                            <span>Important</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <i class="material-icons col-amber">donut_large</i>
+                            <span>Warning</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <i class="material-icons col-light-blue">donut_large</i>
+                            <span>Information</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy;2025 <a href="javascript:void(0);">Trollify Industry</a> CEO Prem Janghela
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                    <ul class="demo-choose-skin">
+                        <li data-theme="red" class="active">
+                            <div class="red"></div>
+                            <span>Red</span>
+                        </li>
+                        <li data-theme="pink">
+                            <div class="pink"></div>
+                            <span>Pink</span>
+                        </li>
+                        <li data-theme="purple">
+                            <div class="purple"></div>
+                            <span>Purple</span>
+                        </li>
+                        <li data-theme="deep-purple">
+                            <div class="deep-purple"></div>
+                            <span>Deep Purple</span>
+                        </li>
+                        <li data-theme="indigo">
+                            <div class="indigo"></div>
+                            <span>Indigo</span>
+                        </li>
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                            <span>Blue</span>
+                        </li>
+                        <li data-theme="light-blue">
+                            <div class="light-blue"></div>
+                            <span>Light Blue</span>
+                        </li>
+                        <li data-theme="cyan">
+                            <div class="cyan"></div>
+                            <span>Cyan</span>
+                        </li>
+                        <li data-theme="teal">
+                            <div class="teal"></div>
+                            <span>Teal</span>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                            <span>Green</span>
+                        </li>
+                        <li data-theme="light-green">
+                            <div class="light-green"></div>
+                            <span>Light Green</span>
+                        </li>
+                        <li data-theme="lime">
+                            <div class="lime"></div>
+                            <span>Lime</span>
+                        </li>
+                        <li data-theme="yellow">
+                            <div class="yellow"></div>
+                            <span>Yellow</span>
+                        </li>
+                        <li data-theme="amber">
+                            <div class="amber"></div>
+                            <span>Amber</span>
+                        </li>
+                        <li data-theme="orange">
+                            <div class="orange"></div>
+                            <span>Orange</span>
+                        </li>
+                        <li data-theme="deep-orange">
+                            <div class="deep-orange"></div>
+                            <span>Deep Orange</span>
+                        </li>
+                        <li data-theme="brown">
+                            <div class="brown"></div>
+                            <span>Brown</span>
+                        </li>
+                        <li data-theme="grey">
+                            <div class="grey"></div>
+                            <span>Grey</span>
+                        </li>
+                        <li data-theme="blue-grey">
+                            <div class="blue-grey"></div>
+                            <span>Blue Grey</span>
+                        </li>
+                        <li data-theme="black">
+                            <div class="black"></div>
+                            <span>Black</span>
+                        </li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="settings">
+                    <div class="demo-settings">
+                        <p>GENERAL SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Report Panel Usage</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Email Redirect</span>
+                                <div class="switch">
+                                    <label><input type="checkbox"><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>SYSTEM SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Notifications</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Auto Updates</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>ACCOUNT SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Offline</span>
+                                <div class="switch">
+                                    <label><input type="checkbox"><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Location Permission</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+        <!-- Left Sidebar -->
+        
+
+    <section class="content">
+        <div class="container-fluid">
+         
+            <div class="block-header">
+                <h2></h2>
+            </div>
+       
+            <!-- Masked Input -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Student Admission Form
+                                <small>Taken from <a href="https://trollifyedu.netlify.app" target="_blank">https://trollifyedu.netlify.app</a></small>
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="demo-masked-input">
+                                <div class="row clearfix">
+                                 <form id="myForm">  
+                                  
+
+<div class="col-md-3">
+    <b>Enrollment No</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">badge</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Enrollment_No" class="form-control" placeholder="Enter Enrollment No" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Student Name</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">person</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Student_Name" class="form-control" placeholder="Enter Student Name" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Scholar No</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">pin</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Scholar_No" class="form-control" placeholder="Enter Scholar No" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Admission Type</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">group_add</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Admission_Type" class="form-control" placeholder="Enter Admission Type (New / Old)" required>
+        </div>
+    </div>
+</div>
+                        
+                                   
+<div class="col-md-3">
+    <b>Class</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">school</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Class" class="form-control" placeholder="Enter Class" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Education Medium</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">language</i>
+        </span>
+        <div class="form-line">
+            <select name="Education_Medium" required><option value="">select</option><option value="Hindi">Hindi</option><option value="English">English</option></select>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Is RTE</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">check_circle</i>
+        </span>
+        <div class="form-line">
+             <select name="is_RTE" required><option value="">select</option><option value="Yes">Yes</option><option value="No">No</option></select>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>APAAR ID</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">verified_user</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="APAAR_ID" class="form-control" placeholder="Enter APAAR ID" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Admission Date</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">calendar_today</i>
+        </span>
+        <div class="form-line">
+            <input type="date" name="Admission_Date" class="form-control" placeholder="Enter Admission Date" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Aadhar Card</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">credit_card</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Aadhar_card" class="form-control" placeholder="Enter Aadhar Card" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>SSM ID</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">vpn_key</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="SSM_id" class="form-control" placeholder="Enter SSM ID" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Family ID</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">group</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Family_id" class="form-control" placeholder="Enter Family ID" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Physical Disability</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">accessible</i>
+        </span>
+        <div class="form-line">
+            <select name="Physical_disability" required><option value=""></option><option value="Yes">Yes</option><option value="No">No</option></select>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Date of Birth</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">cake</i>
+        </span>
+        <div class="form-line">
+            <input type="date" name="Date_of_birth" class="form-control" placeholder="Enter Date of Birth" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Blood Group</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">opacity</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Blood_group" class="form-control" placeholder="Enter Blood Group" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Religion</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">self_improvement</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Religion" class="form-control" placeholder="Enter Religion" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Category</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">category</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Category" class="form-control" placeholder="Enter Category" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Email</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">email</i>
+        </span>
+        <div class="form-line">
+            <input type="email" name="Email" class="form-control" placeholder="Enter Email" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Phone</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">phone</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Phone" class="form-control" placeholder="Enter Phone" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Whatsapp</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">chat</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Whatsapp" class="form-control" placeholder="Enter Whatsapp" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Address</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">location_on</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Address" class="form-control" placeholder="Enter Address" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Father Name</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">man</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Father_name" class="form-control" placeholder="Enter Father Name" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Father Qualification</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">menu_book</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Father_Qualification" class="form-control" placeholder="Enter Father Qualification" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Father Occupation</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">work</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Father_Occupation" class="form-control" placeholder="Enter Father Occupation" required> 
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Father Annual Income</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">paid</i>
+        </span>
+        <div class="form-line">
+            <input type="number" name="Father_Annual_income" class="form-control" placeholder="Enter Father Annual Income" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Father Email</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">email</i>
+        </span>
+        <div class="form-line">
+            <input type="email" name="Father_Email" class="form-control" placeholder="Enter Father Email" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Father Phone</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">phone</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Father_Phone" class="form-control" placeholder="Enter Father Phone" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Mother Name</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">woman</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Mother_name" class="form-control" placeholder="Enter Mother Name" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Mother Qualification</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">menu_book</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Mother_Qualification" class="form-control" placeholder="Enter Mother Qualification" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Mother Occupation</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">work</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="mother_Occupation" class="form-control" placeholder="Enter Mother Occupation" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Mother Annual Income</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">paid</i>
+        </span>
+        <div class="form-line">
+            <input type="number" name="Mother_Annual_income" class="form-control" placeholder="Enter Mother Annual Income" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Mother Email</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">email</i>
+        </span>
+        <div class="form-line">
+            <input type="email" name="Mother_Email" class="form-control" placeholder="Enter Mother Email" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Mother Phone</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">phone</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Mother_Phone" class="form-control" placeholder="Enter Mother Phone" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Last School Name</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">school</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="last_school_name" class="form-control" placeholder="Enter Last School Name" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>TC No</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">description</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="TC_No" class="form-control" placeholder="Enter TC No" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>TC Date of Issue</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">event</i>
+        </span>
+        <div class="form-line">
+            <input type="date" name="Date_of_Issue" class="form-control" placeholder="Enter TC Date of Issue" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Total Fee</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">attach_money</i>
+        </span>
+        <div class="form-line">
+            <input type="number" name="Total_fee" class="form-control" placeholder="Enter Total Fee" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Total Discount</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">sell</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Total_discount" class="form-control" placeholder="Enter Total Discount" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Total Paid</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">account_balance_wallet</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Total_paid" class="form-control" placeholder="Enter Total Paid" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Pending Fee</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">money_off</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Pending_fee" class="form-control" placeholder="Enter Pending Fee" value="=AR2-AT2" readonly>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Payment Mode</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">payment</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Payment_mode" class="form-control" placeholder="Enter Payment Mode" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Received By</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">how_to_reg</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="recived_by" class="form-control" placeholder="Enter Received By" required>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-3">
+    <b>Remarks</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">notes</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Remarks" class="form-control" placeholder="Enter Remarks" required>
+        </div>
+    </div>
+</div>
+                                                                   
+   <div class="col-md-3">
+    <b>Photo URL</b>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">link</i>
+        </span>
+        <div class="form-line">
+            <input type="text" name="Photo_url" class="form-control" placeholder="https://img.prem_janghela.png" value="https://i.postimg.cc/QMDDM9tn/images.png" required>
+        </div>
+    </div>
+</div>                                
+             
+          
+                                 <button type="submit" class="btn bg-indigo waves-effect">
+                                    <i class="material-icons">verified_user</i>
+                                    <span>Admission Now</span>
+                                </button>
+                                   
+									
+                            </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Masked Input -->
+           
+        </div>
+    </section>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwqZxjpeoFynD87Jz1Ff3fQlljKfzFzpxnPS-_1iZVunMihl2Vklu6CAFA4aHspkOo9/exec'; // <-- yahan apna URL daalo
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Do you want to submit this form?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, submit it!',
+        cancelButtonText: 'Cancel'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: 'Submitting...',
+            html: 'Please wait',
+            allowOutsideClick: false,
+            didOpen: () => {
+              Swal.showLoading();
+            }
+          });
+
+          const formData = new FormData(form);
+          fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+              Swal.fire({
+                title: 'Success!',
+                text: 'Your form has been submitted.',
+                icon: 'success',
+              });
+              form.reset();
+            })
+            .catch(error => {
+              Swal.fire('Error!', error.message, 'error');
+            });
+        }
+      });
+    });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Jquery Core Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/dropzone/dropzone.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/multi-select/js/jquery.multi-select.js"></script>
+
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src=https://trollifyindustry.github.io/premjanghela/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/nouislider/nouislider.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/js/admin.js"></script>
+    <script src="https://trollifyindustry.github.io/premjanghela/js/pages/forms/advanced-form-elements.js"></script>
+
+    <!-- Demo Js -->
+    <script src="https://trollifyindustry.github.io/premjanghela/js/demo.js"></script>
+</body>
+
+</html>
+
+
+
+<!-CODE-GS-GOOGKE-SHEET---------
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("studentData");
+  var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+  
+  var row = [];
+  for (var i = 0; i < headers.length; i++) {
+    var field = headers[i];
+    row.push(e.parameter[field] || "");
+  }
+
+  sheet.appendRow(row);
+  return ContentService.createTextOutput("Success");
+}
+---------->
