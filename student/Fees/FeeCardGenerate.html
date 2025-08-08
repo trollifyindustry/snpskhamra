@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Fee </title>
+  <style>
+  
+    
+   @page {
+   margin: 0px 0px 0px 0px;
+   }
+   @media print {
+     button {
+    display: none; /* Hide the button when printing */
+    }
+   .table1 {
+       position:absolute;
+       margin-top:-660px;
+       font-size:15px;
+       margin-left:25px;
+   }
+   
+   .table2 {  
+   position:absolute;
+   margin-top:-660px;
+   font-size:15px;
+   margin-left:605px;
+   }
+   
+   label{font-weight:bold}
+   input{border:none;}
+   td{padding:-100px;}
+   
+   }
+  </style>
+</head>
+<body>
+<button onclick="window.print()">🖨️ Print</button>
+<img src="https://lh3.googleusercontent.com/d/10eyFfVi3UeNNeA1kcFroNBGUvTNn5HuS=s0" width="100%"  >
+
+   <table class="table1" >
+      <tr>
+         <td><label>Student Name:</label><input type="text" id="name" oninput="autoFill()"></td>
+         <td><label>Admission No:</label><input type="text" id="admission" oninput="autoFill()"></td>
+      </tr>
+      <tr>
+         <td><label>Father Name:</label><input type="text" id="father" oninput="autoFill()"></td>
+         <td><label>Class:</label><input type="text" id="class" oninput="autoFill()"></td>
+      </tr>
+      <tr>
+         <td><label>Mother Name:</label><input type="text" id="mother" oninput="autoFill()"></td>
+         <td><label>DOB:</label><input type="text" id="dob" oninput="autoFill()"></td>
+      </tr>
+      <tr>
+         <td><label>Total Fee ₹:</label><input type="number" id="fee" oninput="autoFill()"></td>
+         <td><label>Phone No:</label><input type="text" id="phone" oninput="autoFill()"></td>
+      </tr>
+      <tr>
+         <td colspan="2"><label>Address:</label><input type="text" id="address" oninput="autoFill()"></td>
+      </tr>
+   </table>
+
+
+
+  <!-- Section 2: Auto-Filled Output -->
+  <table class="table2" >
+      <tr>
+         <td><label>Student Name:</label> <span id="out_name"></span></td>
+         <td><label>Admission No:</label> <span id="out_admission"></span></td>
+      </tr>
+      <tr>
+         <td><label>Father Name:</label> <span id="out_father"></span></td>
+         <td><label>Class:</label> <span id="out_class"></span></td>
+      </tr>
+      <tr>
+         <td><label>Mother Name:</label> <span id="out_mother"></span></td>
+         <td><label>Date of Birth:</label> <span id="out_dob"></span></td>
+      </tr>
+      <tr>
+         <td><label>Phone No:</label> <span id="out_phone"></span></td>
+         <td><label>Total Fee ₹:</label> <span id="out_fee"></span></td>
+      </tr>
+      <tr>
+         <td colspan="2"><label>Address:</label> <span id="out_address"></span></td>
+      </tr>
+  </table>
+
+
+
+    <ul>
+
+
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+<script>
+  function autoFill() {
+    document.getElementById("out_name").textContent = document.getElementById("name").value;
+    document.getElementById("out_father").textContent = document.getElementById("father").value;
+    document.getElementById("out_mother").textContent = document.getElementById("mother").value;
+    document.getElementById("out_admission").textContent = document.getElementById("admission").value;
+    document.getElementById("out_class").textContent = document.getElementById("class").value;
+    document.getElementById("out_dob").textContent = document.getElementById("dob").value;
+    document.getElementById("out_fee").textContent = document.getElementById("fee").value;
+    document.getElementById("out_phone").textContent = document.getElementById("phone").value;
+    document.getElementById("out_address").textContent = document.getElementById("address").value;
+  }
+</script>
+
+</body>
+</html></script>
+
+</body>
+</html>
