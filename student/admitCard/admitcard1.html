@@ -284,7 +284,7 @@
             { subject: document.getElementById("subject4").value, date: document.getElementById("date4").value, time: document.getElementById("time4").value },
             { subject: document.getElementById("subject5").value, date: document.getElementById("date5").value, time: document.getElementById("time5").value },
             { subject: document.getElementById("subject6").value, date: document.getElementById("date6").value, time: document.getElementById("time6").value }
-            ];
+        ];
 
         // Loop through each student row
         for (let row of studentTable.rows) {
@@ -296,17 +296,15 @@
 
             // Create admit card HTML structure
             const admitCard = `
-                
                 <div class="admit-card">
                     <img class="logo" src="https://i.ibb.co/ZwDdfrN/20250225-123453.jpg">
                     <div class="admit-card-header">${examType} <br>Admit Card</div>
                     <div class="admit-card-info">
-                <p><strong>STUDENT NAME :</strong> ${studentName}
-                <strong class="text4">CLASS :</strong> ${studentClass}</p>
-                <p><strong>ROLL NO</strong> ${rollNo}
-                <strong class="text4">DATE OF BIRTH :</strong> ${dob}</p>
-                
-                       </div>
+                        <p><strong>STUDENT NAME :</strong> ${studentName}
+                        <strong class="text4">CLASS :</strong> ${studentClass}</p>
+                        <p><strong>ROLL NO</strong> ${rollNo}
+                        <strong class="text4">DATE OF BIRTH :</strong> ${dob}</p>
+                    </div>
                     <p class="text3"> Subject-wise Exam Time table</p>
                     <table class="admit-card-table">
                         <thead>
@@ -326,13 +324,8 @@
                             `).join('')}
                         </tbody>
                     </table>
-                     <p class="text1">महत्वपूर्ण निर्देश:</p>
-                     <p class="text1">1. प्रवेश पत्र के बिना परीक्षा में बैठने की अनुमति नहीं होगी।</p>
-                 
-                    
-                     
-                     
-                  
+                    <p class="text1">महत्वपूर्ण निर्देश:</p>
+                    <p class="text1">1. प्रवेश पत्र के बिना परीक्षा में बैठने की अनुमति नहीं होगी।</p>
                     <p class="text2">Principal Signature </p>
                     <img src="https://i.postimg.cc/FzqPcxBX/20241008-083425.png" class="prem-name">
                 </div>
@@ -341,28 +334,13 @@
             // Add admit card to the div
             admitCardsDiv.innerHTML += admitCard;
         }
-        // Original date string
-        let dob = "2017-12-10T18:30:00.000Z";
-        
-        // Convert to proper format
-        let formattedDOB = new Date(dob).toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-        });
-        
-        // Use in HTML
-        document.querySelector('.text4').innerHTML = `Date of Birth: ${formattedDOB}`;
 
         // Print the generated admit cards
         window.print();
-        
     }
-    
-</script>
-<script>
+
     async function fetchData() {
-        const apiUrl = "https://script.google.com/macros/s/AKfycbxdzf0XOM78g_clsa00DC1RnexT5ldmZdqIfYE3u9oCCdEAjv0TaC31vrOJonGZQfPZ_g/exec";  
+        const apiUrl = "https://script.google.com/macros/s/AKfycbxdzf0XOM78g_clsa00DC1RnexT5ldmZdqIfYE3u9oCCdEAjv0TaC31vrOJonGZQfPZ_g/exec";
 
         try {
             let response = await fetch(apiUrl);
@@ -370,16 +348,14 @@
             let tableBody = document.getElementById("studenttable");
 
             data.forEach(student => {
-                let formattedDOB = formatDate(student.okdob); // Date ko format karein
-                
                 let row = `<tr>
                     <td>${student.okstudent_name}</td>
                     <td>${student.okfather_name}</td>
                     <td>${student.okclass}</td>
                     <td>${student.okroll_no}</td>
-                    <td>${formattedDOB}</td> <!-- Formatted date -->
+                    <td>${student.okdob}</td> <!-- Original data from sheet as-is -->
                 </tr>`;
-                
+
                 tableBody.innerHTML += row;
             });
         } catch (error) {
@@ -387,18 +363,7 @@
         }
     }
 
-    // Function to format date to "DD-MM-YYYY"
-    function formatDate(dob) {
-        if (!dob) return ""; // Agar koi date na ho to blank return karein
-
-        let date = new Date(dob);
-        let day = String(date.getDate()).padStart(2, '0'); 
-        let month = String(date.getMonth() + 1).padStart(2, '0'); 
-        let year = date.getFullYear();
-
-        return `${day}-${month}-${year}`;
-    }
-
+    // Call fetchData to load student data
     fetchData();
 </script>
 <script type="text/javascript"></script>
@@ -407,3 +372,29 @@
 
 </body>
 </html>
+
+
+
+
+<!--------
+function doGet() {
+  return ContentService.createTextOutput(getStudentData()).setMimeType(ContentService.MimeType.JSON);
+}
+
+function getStudentData() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+  var data = sheet.getDataRange().getValues();
+  var jsonData = [];
+  
+  for (var i = 1; i < data.length; i++) {  // Skip header row
+    jsonData.push({
+      okstudent_name: data[i][0],
+      okfather_name: data[i][1],
+      okclass: data[i][2],
+      okroll_no: data[i][3],
+      okdob: data[i][4]
+    });
+  }
+  
+  return JSON.stringify(jsonData);
+}
