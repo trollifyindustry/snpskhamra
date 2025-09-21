@@ -1262,3 +1262,61 @@ function doGet(e) {
   </script>
   <!--End-Page-Password-Script-->
 
+<!----error pop-up show----->
+*[Server Error Js code]*
+<script>
+window.onload = function () {
+    // Black overlay
+    let overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0,0,0,0.9)";
+    overlay.style.zIndex = "9999";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    document.body.appendChild(overlay);
+
+    // Stylish popup
+    let popup = document.createElement("div");
+    popup.innerHTML = `
+        <div style="
+            font-size:60px;
+            color:#ff4444;
+            margin-bottom:15px;
+            ">⚠️</div>
+        <div style="
+            font-size:28px;
+            font-weight:bold;
+            margin-bottom:10px;
+            color:#fff;
+            ">Server Error!</div>
+        <div style="
+            font-size:18px;
+            color:#ccc;
+            ">Something went wrong. Please try again later.</div>
+    `;
+    popup.style.background = "#222";
+    popup.style.padding = "40px 50px";
+    popup.style.borderRadius = "15px";
+    popup.style.textAlign = "center";
+    popup.style.boxShadow = "0 0 25px rgba(255,0,0,0.7)";
+    popup.style.opacity = "0";
+    popup.style.transform = "scale(0.7)";
+    popup.style.transition = "all 0.4s ease";
+    overlay.appendChild(popup);
+
+    // Small animation delay
+    setTimeout(() => {
+        popup.style.opacity = "1";
+        popup.style.transform = "scale(1)";
+    }, 200);
+};
+</script>
+
+
+
+
