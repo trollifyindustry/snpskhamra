@@ -1262,7 +1262,190 @@ function doGet(e) {
   </script>
   <!--End-Page-Password-Script-->
 
-<!----error pop-up show----->
+<!------server error API massage----->
+<script type="text/javascript">
+(() => {
+  'use strict';
+
+  // === STYLE ===
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes blackoutFade { from { background: rgba(0,0,0,0); } to { background: rgba(0,0,0,1); } }
+    @keyframes modalZoom {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    body * { transition: filter 0.3s ease; }
+
+    .pj-connecting {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0e0e0e;
+      color: #fff;
+      font-family: 'Poppins', system-ui, sans-serif;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      z-index: 2147483646;
+      width: 240px;
+      animation: fadeIn 0.5s ease;
+    }
+    .pj-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .pj-bar {
+      width: 100%;
+      height: 6px;
+      background: #222;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .pj-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00e0ff, #0090ff);
+      border-radius: 6px;
+      transition: width 0.2s ease;
+    }
+    .pj-percent {
+      font-size: 12px;
+      text-align: right;
+      color: #aaa;
+      margin-top: 4px;
+      letter-spacing: 0.4px;
+    }
+
+    .pj-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      z-index: 2147483645;
+      pointer-events: none;
+    }
+    .pj-full-black {
+      animation: blackoutFade 1.4s forwards ease-in;
+    }
+
+    .pj-modal {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 320px;
+      max-width: 90%;
+      background: #0e0e0e;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+      z-index: 2147483647;
+      padding: 24px;
+      text-align: center;
+      font-family: 'Poppins', system-ui, sans-serif;
+      display: none;
+    }
+    .pj-modal.show {
+      display: block;
+      animation: modalZoom 0.6s ease-out;
+    }
+    .pj-modal h2 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: #ff4040;
+    }
+    .pj-modal p {
+      margin: 0 0 16px 0;
+      font-size: 14px;
+      color: #ddd;
+    }
+    .pj-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #111;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .pj-btn:hover { background: #222; }
+  `;
+  document.head.appendChild(style);
+
+  // === ELEMENTS ===
+  const container = document.createElement('div');
+  container.className = 'pj-connecting';
+  container.innerHTML = `
+    <div class="pj-title">Connecting to server........</div>
+    <div class="pj-bar"><div class="pj-fill"></div></div>
+    <div class="pj-percent">0%</div>
+  `;
+  document.body.appendChild(container);
+
+  const overlay = document.createElement('div');
+  overlay.className = 'pj-overlay';
+  document.body.appendChild(overlay);
+
+  const modal = document.createElement('div');
+  modal.className = 'pj-modal';
+  modal.innerHTML = `
+    <h2>Server Error</h2>
+    <p>API not connected — please check your network or try again later.</p>
+    <button class="pj-btn">Retry</button>
+  `;
+  document.body.appendChild(modal);
+
+  // === PROGRESS LOGIC ===
+  const fill = container.querySelector('.pj-fill');
+  const percent = container.querySelector('.pj-percent');
+  const retryBtn = modal.querySelector('.pj-btn');
+  let progress = 0;
+  let interval;
+
+  const startProgress = (speed = 100) => {
+    clearInterval(interval);
+    interval = setInterval(() => {
+      progress += Math.random() * 6 + 4; // random step for realism
+      if (progress >= 100) {
+        progress = 100;
+        fill.style.width = progress + '%';
+        percent.textContent = '100%';
+        clearInterval(interval);
+        setTimeout(triggerError, 2000);
+      } else {
+        fill.style.width = progress + '%';
+        percent.textContent = Math.floor(progress) + '%';
+      }
+    }, speed);
+  };
+
+  function triggerError() {
+    container.style.display = 'none';
+    overlay.classList.add('pj-full-black');
+    setTimeout(() => {
+      modal.classList.add('show');
+    }, 1500);
+  }
+
+  retryBtn.onclick = () => {
+    modal.classList.remove('show');
+    overlay.classList.remove('pj-full-black');
+    container.style.display = 'block';
+    fill.style.width = '0%';
+    percent.textContent = '0%';
+    progress = 0;
+    startProgress(100);
+  };
+
+  startProgress(100);
+})();</script>
+</html>
+
+<!----error pop-up show-----
 *[Server Error Js code]*
 <script>
 window.onload = function () {
