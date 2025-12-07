@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admit Card Maker</title>
+   
+</head>
+  <style> 
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+.infotable{
+  font-size:11.5px ;
+  border-color: #fff;
+  padding: 1px;
+}
+        
+       .logo {
+       width: 90%;               /* Set width to 90% */
+       display: block;            /* Ensure the image is treated as a block-level element */
+       margin: 0 auto;            /* Center the image horizontally */
+       align-items: center;       /* Align items (optional if display is block) */
+       }
+       
+       .text1{
+       font-size:9px;
+       margin: 1.20px;
+       margin-left:20px;
+       }
+       .text2{
+       font-size:11px;
+       margin: 1.20px;
+       text-align:right;
+       font-weight:bold;
+       margin-right:3px;
+       position:;
+       }
+       .text3{
+       font-size:14.5px;
+       margin: 1.20px;
+       text-align:center;
+       margin-left:35px;
+       font-weight:bold;
+       position:;
+       margin-top:2px;
+       }
+       .text4{
+       margin-left:25px;
+       position:;
+       }
+.bg-logo{
+     width:22%;
+     position:absolute;
+     opacity:10%;
+     margin-top:130px;
+     margin-left:140px;
+}
+       .prem-name {
+       width:9%;
+       opacity: 100%;            /* Set opacity to 70% */
+       transform: rotate(90deg); /* Rotate the text 90 degrees */
+       position:absolute;
+       margin-top:-150px;
+       margin-left:480px;
+       display:none;
+       }
+       body {
+       -webkit-print-color-adjust: exact;
+       }
+       .admit-card {
+       
+       width: 45%;  /* Ensures 2 cards per row */
+       height: 60%; /* Adjust height to fit 4 on a page */
+       }
+       .admit-card {
+       width: 49%;  /* 2 cards per row */
+       height: 2%; /* Adjust height to fit 4 on a page */
+       border: 1px solid black;
+       padding: 2px;
+       margin-bottom: 7px;
+       margin-right:4px;
+       display: inline-block;
+       box-sizing: border-box;
+       }
+       .admit-card-header {
+       text-align: center;
+       font-weight: bold;
+       margin-bottom: 1px;
+       margin-top:0px;
+       }
+       .admit-card-info {
+       margin-bottom: 0.2px;
+       margin-left:35px;
+       margin-right:20px;
+       }
+       .admit-card-info p {
+       margin: 2px 0;
+       }
+       .admit-card-table {
+       width: 90%;            /* Set the width to 80% */
+       margin: 1px auto;      /* Center the table and add a top margin of 1px */
+       margin-bottom:6px; 
+       }
+       .admit-card-table th, .admit-card-table td {
+       padding: 1px;
+       border: 1px solid black;
+       text-align: center;
+       }
+
+        /* Print Styling */
+        @media print {
+           @page {
+           size:;  /* Ensures A4 landscape */
+           margin: 2px;         /* Set all margins to 1px */
+           }
+          .logo {
+          width: 90%;               /* Set width to 90% */
+          display: block;            /* Ensure the image is treated as a block-level element */
+          margin: 0 auto;            /* Center the image horizontally */
+          align-items: center;       /* Align items (optional if display is block) */
+          }
+          
+          .text1{
+              font-size:9px;
+              margin: 1px;
+              margin-left:20px;
+          }
+          .text2{
+          font-size:11px;
+          margin: 1.20px;
+          text-align:right;
+          font-weight:bold;
+          margin-right:3px;
+          position:;
+          }
+          .text3{
+          font-size:14.5px;
+          margin: 1.20px;
+          text-align:center;
+          margin-left:35px;
+          font-weight:bold;
+          position:;
+          margin-top:2px;
+          }
+          .text4{
+          margin-left:25px;
+          position:;
+          }
+          .prem-name {
+          width:9%;
+          opacity: 100%;            /* Set opacity to 70% */
+          transform: rotate(90deg); /* Rotate the text 90 degrees */
+          position:absolute;
+          margin-top:-150px;
+          margin-left:480px;
+          }
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+            .admit-card {
+   
+                width: 45%;  /* Ensures 2 cards per row */
+                height: 60%; /* Adjust height to fit 4 on a page */
+            }
+            .admit-card {
+            width: 49%;  /* 2 cards per row */
+            height: 2%; /* Adjust height to fit 4 on a page */
+            border: 1px solid black;
+            padding: 2px;
+            margin-bottom: 7px;
+            margin-right:4px;
+            display: inline-block;
+            box-sizing: border-box;
+            }
+            .admit-card-header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 1px;
+            margin-top:0px;
+            }
+            .admit-card-info {
+            margin-bottom: 0.2px;
+            margin-left:35px;
+            margin-right:20px;
+            }
+            .admit-card-info p {
+            margin: 2px 0;
+            }
+            .admit-card-table {
+            width: 90%;            /* Set the width to 80% */
+            margin: 1px auto;      /* Center the table and add a top margin of 1px */
+            margin-bottom:6px; 
+            font-size:14px;
+            }
+            .admit-card-table th, .admit-card-table td {
+            padding: 1px;
+            border: 1px solid black;
+            text-align: center;
+            }
+            
+          .8{
+             padding:2px;
+             font-size:14.5px;
+            }
+        }
+        
+        
+        
+    
+</style>
+<body>
+
+<h1>Admit Card Maker</h1>
+    <a href="https://docs.google.com/spreadsheets/d/1S_NDdhzUGX6VryolCqHHGAG06Iab0AoSU0vtEdAx2Sw/edit?usp=sharing">Visit student data</a>
+
+
+<!-- Student Data Table -->
+<table id="studentTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Father</th>
+            <th>Class</th>
+            <th>Roll No</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+   <tbody id="studenttable">
+   <!-- Data will be inserted here -->
+   </tbody>
+</table>
+
+<!-- Form to Input Exam Details -->
+<div class="form-section">
+    <label for="examType">Exam Type: </label>
+    <input type="text"  id="examType" value="HALF YEARLY EXAMINATION 2025-26">
+    
+    <br><br>
+    <label for="subject1">Subject 1: </label> <input type="text" id="subject1" value="MATHS">
+    <label for="date1">Date: </label> <input type="txt" id="date1">
+    <label for="time1">Time: </label> <input type="text" id="time1" value="09:00 AM to 12:00 PM">
+    <br><br>
+    <label for="subject2">Subject 2: </label> <input type="text" id="subject2" value="ENGLISH">
+    <label for="date2">Date: </label> <input type="txt" id="date2">
+    <label for="time2">Time: </label> <input type="text" id="time2" value="09:00 AM to 12:00 PM">
+    <br><br>
+    <label for="subject3">Subject 3: </label> <input type="text" id="subject3" value="HINDI">
+    <label for="date3">Date: </label> <input type="txt" id="date3">
+    <label for="time3">Time: </label> <input type="text" id="time3" value="09:00 AM to 12:00 PM">
+    <br><br>
+    <label for="subject4">Subject 4: </label> <input type="text" id="subject4" value="EVS">
+    <label for="date4">Date: </label> <input type="txt" id="date4">
+    <label for="time4">Time: </label> <input type="text" id="time4" value="09:00 AM to 12:00 PM">
+    <br><br>
+    <label for="subject5">Subject 5: </label> <input type="text" id="subject5" value="DRAWING">
+    <label for="date5">Date: </label> <input type="txt" id="date5">
+    <label for="time5">Time: </label> <input type="text" id="time5" value="09:00 AM to 12:00 PM">
+    <br><br>
+    
+    <label for="subject6">Subject 6: </label> <input type="text" id="subject6" value="ORAL">
+    <label for="date6">Date: </label> <input type="txt" id="date6">
+    <label for="time6">Time: </label> <input type="text" id="time6" value="09:00 AM to 12:00 PM">
+</div>
+
+<!-- Print Button -->
+<button class="print-button" onclick="generateAdmitCards()">Generate & Print Admit Cards</button>
+
+<!-- Section where admit cards will be generated -->
+<div id="admitCards"></div>
+
+<script>
+    function generateAdmitCards() {
+        const studentTable = document.getElementById("studentTable").getElementsByTagName("tbody")[0];
+        const admitCardsDiv = document.getElementById("admitCards");
+        admitCardsDiv.innerHTML = ""; // Clear previous admit cards
+
+        // Fetch exam details from form
+        const examType = document.getElementById("examType").value;
+        const subjects = [
+            { subject: document.getElementById("subject1").value, date: document.getElementById("date1").value, time: document.getElementById("time1").value },
+            { subject: document.getElementById("subject2").value, date: document.getElementById("date2").value, time: document.getElementById("time2").value },
+            { subject: document.getElementById("subject3").value, date: document.getElementById("date3").value, time: document.getElementById("time3").value },
+            { subject: document.getElementById("subject4").value, date: document.getElementById("date4").value, time: document.getElementById("time4").value },
+            { subject: document.getElementById("subject5").value, date: document.getElementById("date5").value, time: document.getElementById("time5").value },
+            { subject: document.getElementById("subject6").value, date: document.getElementById("date6").value, time: document.getElementById("time6").value }
+        ];
+
+        // Loop through each student row
+        for (let row of studentTable.rows) {
+            const studentName = row.cells[0].textContent;
+            const fatherName = row.cells[1].textContent;
+            const studentClass = row.cells[2].textContent;
+            const rollNo = row.cells[3].textContent;
+            const dob = row.cells[4].textContent;
+
+            // Create admit card HTML structure
+            const admitCard = `
+                <div class="admit-card"> 
+                    <img class="logo" src="https://i.ibb.co/ZwDdfrN/20250225-123453.jpg">
+                    <div class="admit-card-header">${examType} <br>Admit Card</div>
+                    <div class="admit-card-info">
+                    
+                    <table>
+                          <tr>
+                              <th Class="infotable">Name - </th>
+                              <td Class="infotable" colspan="1">${studentName}</td>
+                              <th Class="infotable">Father - </th>
+                              <td Class="infotable" colspan="1">${fatherName}</td>
+                              <td Class="infotable" colspan="1"></td>
+                              <td Class="infotable" colspan="1"></td>
+                              
+                              
+                          </tr>
+                          <tr>
+                              <th Class="infotable">DOB - </th>
+                              <td Class="infotable">${dob}</td>
+                              <th Class="infotable">Class - </th>
+                              <td Class="infotable">${studentClass}</td>
+                              <th Class="infotable">Roll No - </th>
+                              <td Class="infotable">${rollNo}</td>
+                          </tr>
+                          
+                    </table>
+                    
+                       
+                    </div>
+                    <p class="text3"> Subject-wise Exam Time table</p>
+                    <table class="admit-card-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${subjects.map(sub => `
+                                <tr>
+                                    <td>${sub.subject}</td>
+                                    <td>${sub.date}</td>
+                                    <td>${sub.time}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                    <p class="text1">महत्वपूर्ण निर्देश:</p>
+                    <p class="text1">1. प्रवेश पत्र के बिना परीक्षा में बैठने की अनुमति नहीं होगी।</p>
+                    <p class="text2">Principal Signature </p>
+                    <img src="https://i.postimg.cc/FzqPcxBX/20241008-083425.png" class="prem-name">
+                    <img src="https://lh3.googleusercontent.com/d/1L8n5HFZZorTxStiV4rEo90o38gMGsFdK=s0" class="bg-logo">
+                    
+                </div>
+            `;
+
+            // Add admit card to the div
+            admitCardsDiv.innerHTML += admitCard;
+        }
+
+        // Print the generated admit cards
+        window.print();
+    }
+
+    async function fetchData() {
+        const apiUrl = "https://script.google.com/macros/s/AKfycbxdzf0XOM78g_clsa00DC1RnexT5ldmZdqIfYE3u9oCCdEAjv0TaC31vrOJonGZQfPZ_g/exec";
+
+        try {
+            let response = await fetch(apiUrl);
+            let data = await response.json();
+            let tableBody = document.getElementById("studenttable");
+
+            data.forEach(student => {
+                let row = `<tr>
+                    <td>${student.okstudent_name}</td>
+                    <td>${student.okfather_name}</td>
+                    <td>${student.okclass}</td>
+                    <td>${student.okroll_no}</td>
+                    <td>${student.okdob}</td> <!-- Original data from sheet as-is -->
+                </tr>`;
+
+                tableBody.innerHTML += row;
+            });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+
+    // Call fetchData to load student data
+    fetchData();
+</script>
+<script type="text/javascript"></script>
+
+<center></center>
+
+</body>
+</html>
+
+
+
+
+<!--------
+function doGet() {
+  return ContentService.createTextOutput(getStudentData()).setMimeType(ContentService.MimeType.JSON);
+}
+
+function getStudentData() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+  var data = sheet.getDataRange().getValues();
+  var jsonData = [];
+  
+  for (var i = 1; i < data.length; i++) {  // Skip header row
+    jsonData.push({
+      okstudent_name: data[i][0],
+      okfather_name: data[i][1],
+      okclass: data[i][2],
+      okroll_no: data[i][3],
+      okdob: data[i][4]
+    });
+  }
+  
+  return JSON.stringify(jsonData);
+}
