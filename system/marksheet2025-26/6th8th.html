@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet Print System</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 CDN -->
+
+</head>
+
+<div class="inone" >
+    <h2>6HT 8TH Marksheet Print System</h2>
+    <button onclick="fetchData()" class="inone" >Load Marksheet</button>
+    <button onclick="printData()" class="inone" >Print</button>
+  </div>
+    <div id="invoiceContainer"></div>
+
+    <script>
+        let invoices = [];
+
+        function fetchData() {
+            // Show SweetAlert spinner
+            Swal.fire({
+                title: 'Loading Marksheet...',
+                html: '<div class="spinner"></div>',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            fetch("https://script.google.com/macros/s/AKfycbx2nVVGLDFrzB2m5AnAQVD6cUcDRZG0V0pZFk-Xyj9n-WPBbHr22I_XncaF2uBexu0r/exec")
+                .then(response => response.json())
+                .then(data => {
+                    Swal.close(); // Hide spinner once data is loaded
+                    let container = document.getElementById("invoiceContainer");
+                    container.innerHTML = "";
+                    invoices = []; // Reset invoices array
+
+                    data.forEach(row => {
+                        let invoice = document.createElement("div");
+                        invoice.className = "invoice";
+                        invoice.style.display = "block"; // Show invoices properly
+                      
+ //number formate code like 23.3                      
+                       function formatNumber(value) {
+                            let num = parseFloat(value);
+                            if (!isNaN(num)) {
+                                let decimalCount = (num.toString().split('.')[1] || "").length;
+                                return decimalCount > 1 ? num.toFixed(1) : num;
+                            }
+                            return value; // If not a number, return as it is
+                        }
+
+                      
+                        invoice.innerHTML = `
+                  <body> 
+                   <div class="r" >  
+                   <img class="img"  src="https://lh3.googleusercontent.com/d/1e9n-9z4sUfaQxfSB41YyMwVHMlZ2v1mJ=s0">  
+                    <br> <br><br><br><br><h2ACADEMIC SESSION 2024-25></h2> 
+                   <h1REPORT CARD></h1>
+
+                  <br><br> <br>
+    <table class="nametable">
+                   <tr>
+                       <th class="name" width="200px">STUDENT'S NAME</th>
+                       <td class="name" width="640px"> : ${row[0]}</td>
+                       <th class="name" width="175px">ROLL NUMBER</th>
+                       <td class="name"> : ${row[1]}</td>
+                   </tr>
+                   <tr>
+                       <th class="name">FATHER'S NAME</th>
+                       <td class="name"> : ${row[2]}</td>
+                       <th class="name">CLASS</th>
+                       <td class="name"> : ${row[6]}</td>
+                   </tr>
+                   <tr>
+                       <th class="name">MOTHER'S NAME</th>
+                       <td class="name"> : ${row[3]}</td>
+                       <th class="name">SCHOLAR NO.</th>
+                       <td class="name"> : ${row[9]}</td>
+                   </tr>
+                   <tr>
+                       <th class="name">DATE OF BIRTH</th>
+                       <td class="name"> : ${row[4]}</td>
+                       <th class="name">GENDER</th>
+                       <td class="name"> : ${row[8]}</td>
+                   </tr>
+                </table>
+                   
+                   
+                   
+                   
+                   
+                   
+                   <br><br><br><br><br><br><br><br>
+                   
+                   <h3 class="aoaa" >ASSESSMENT SHEET</h3>
+                    <table class="mtt"> 
+                   <tr>  
+                   <th rowspan="3">Sr.N.</th>  
+                   <th rowspan="3" width="200px">SUBJECT</th>  
+                   <th colspan="2" rowspan="2">MONTHLY <br> EVALUATION <br> (10 MARKS)</th>  
+                   <th colspan="2" rowspan="2">HALF YEARLY <br> EVALUATION <br> (20 MARKS)</th>  
+                   <th colspan="4">ANNUAL EVALUATION (70 MARKS)</th>       
+                   <th rowspan="3">TOTAL MARKS (100)</th>  
+                   <th rowspan="3">OVERALL GRADE</th> <td class="nam" >...</td>  
+                   </tr>  
+                   <tr>  
+                   <th colspan="2">WRITTEN  <br> (60 MARKS)</th>  
+                   <th colspan="2">CO-CURRICULAR <br> ACTIVITIES <br>(10 MARKS)</th>    
+                   </tr>  
+                   <tr>  
+                   <th>MARKS OBTAINED</th>  
+                   <th>GRADE</th>  
+                   <th>MARKS OBTAINED</th>  
+                   <th>GRADE</th>  
+                   <th>MARKS OBTAINED</th>  
+                   <th>GRADE</th>  
+                   <th>MARKS OBTAINED</th>  
+                   <th>GRADE</th>  
+                   </tr>  
+                   <tr>  
+                   <td>1</td>  
+                   <td>HINDI</td>  
+                   <td>${row[39]}</td> <td>${row[40]}</td>  
+                   <td>${row[57]}</td> <td>${row[58]}</td>  
+                   <td>${row[74]}</td> <td>${row[75]}</td>  
+                  <td>${row[87]}</td> <td>${row[88]}</td>  
+                   <td>${formatNumber(row[104])}</td> <td>${row[105]}</td>  
+                   </tr>  
+                   <tr>  
+                   <td>2</td>  
+                   <td>ENGLISH</td>  
+                    <td>${row[42]}</td> <td>${row[43]}</td>  
+                   <td>${row[60]}</td> <td>${row[61]}</td>  
+                   <td>${row[76]}</td> <td>${row[77]}</td>  
+                  <td>${row[90]}</td> <td>${row[91]}</td>  
+                   <td>${formatNumber(row[106])}</td> <td>${row[107]}</td>  
+                   </tr>  
+                   <tr>  
+                   <td>3</td>  
+                   <td>MATHEMATICS</td>  
+                    <td>${row[45]}</td> <td>${row[46]}</td>  
+                   <td>${row[63]}</td> <td>${row[64]}</td>  
+                   <td>${row[78]}</td> <td>${row[79]}</td>  
+                  <td>${row[93]}</td> <td>${row[94]}</td>  
+                   <td>${formatNumber(row[108])}</td> <td>${row[109]}</td>  
+                   </tr>  
+                   <tr>  
+                   <td>4</td>  
+                   <td>SCIENCE</td>  
+                    <td>${row[48]}</td> <td>${row[49]}</td>  
+                   <td>${row[66]}</td> <td>${row[67]}</td>  
+                   <td>${row[80]}</td> <td>${row[81]}</td>  
+                  <td>${row[96]}</td> <td>${row[97]}</td>  
+                   <td>${formatNumber(row[110])}</td> <td>${row[111]}</td>  
+                   </tr>  
+                   <tr>  
+                   <td>5</td>  
+                   <td>SOCIAL SCIENCE</td>  
+                    <td>${row[51]}</td> <td>${row[52]}</td>  
+                   <td>${row[69]}</td> <td>${row[70]}</td>  
+                   <td>${row[82]}</td> <td>${row[83]}</td>  
+                  <td>${row[99]}</td> <td>${row[100]}</td>  
+                   <td>${formatNumber(row[112])}</td> <td>${row[113]}</td>  
+                   </tr>  
+                   <tr>  
+                   <td>6</td>  
+                   <td>SANSKRIT</td>  
+                    <td>${row[54]}</td> <td>${row[55]}</td>  
+                   <td>${row[72]}</td> <td>${row[73]}</td>  
+                   <td>${row[84]}</td> <td>${row[85]}</td>  
+                   <td>${row[102]}</td> <td>${row[103]}</td>  
+                   <td>${formatNumber(row[114])}</td> <td>${row[115]}</td>  
+                   </tr>  
+                   </table>  
+                   
+                   
+                   <img class="bgimg" src="https://lh3.googleusercontent.com/d/1WcuFlI4TUpXJRsFNPzMW8ySMlujqEycQ=s0">  
+                   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                   
+                   <table class="lt" >  <tr>  
+                   <th width="70px">GRADE</th>  
+                   <th width="150px">REMARK</th>   
+                     
+                   </tr>  
+                   <tr>  
+                   <td classs="font-size2" >A+</td>  
+                   <td>EXCELLENT</td>
+                  </tr>  
+                   <tr>  
+                   <td classs="font-size2">A</td>                     
+                   <td classs="font-size2">GOOD</td>  
+                   </tr> 
+                   <td classs="font-size2">B+</td>                     
+                   <td classs="font-size2">GOOD</td>  
+                   </tr>
+                   <td classs="font-size2">B</td>                     
+                   <td>AVERAGE</td>  
+                   </tr> 
+                   </tr>
+                   <td classs="font-size2">C</td>                     
+                   <td>BELOW AVERAGE</td>  
+                   </tr> 
+                   <td classs="font-size2">D</td>                     
+                   <td classs="font-size2">FAIL</td>  
+                   </tr> 
+                  
+                   </table>  
+                   </div>  
+                   
+                   <br><br><br><br><br>
+                   
+                   <table class="st">
+    <tr>
+        <td  width=""><b>TOTAL WORKING DAYS: </b>${row[18]}</td>
+        
+        <td width=""><b>PROMOTED TO CLASS: </b>${row[17]}</td>
+        
+        <td  width=""><b>TOTAL SCORE: </b>${formatNumber(row[13])}</td>
+        <th rowspan="2" style="text-align:center;">RESULT : ${row[16]}</th>
+    </tr>
+    <tr>
+        <td><b>TOTAL ATTENDANCE: </b>${row[19]}</td>
+        
+        
+        <td  width=""><b>ATTENDANCE PERCENTAGE: </b>${formatNumber(row[14])}% </td>
+        
+        <td><b>GRADE : </b>${row[15]}</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Class Teacher’s Remarks:</b> Very Good keep it up.</td>
+     </tr>
+    
+    
+</table>
+
+                   
+              
+                   
+                   
+                   
+              
+<p class="issueDate">Issue Date :${row[10]}</p>
+<img class="qr" src="${row[20]}">
+ <img class="studentphoto" src="${row[12]}">
+ <p class="prem-janghela"> Prepared through <b>TROLLIFY INDUSTRY,</b> designed for SNPS by <b>Prem Janghela</b>,9752776923 <p>
+ 
+ <table class="singnatureTable">
+    <tr>
+        <td class="singnatureTd"><b>Place:</b> Khamra</td>
+        <td class="singnatureTd">${row[10]}</td>
+        <td class="singnatureTd">${row[11]}</td>
+        <td class="singnatureTd">${row[20]}</td>
+    </tr>
+    <tr>
+        <td class="singnatureTd"><b>Date:</b> 29/03/2025</td>
+        <td class="singnatureTd"><b>CLASS TEACHER</b></td>
+        <td class="singnatureTd"><b>ACADEMIC INCHARGE</b></td>
+        <td class="singnatureTd"><b>PRINCIPAL</b></td>
+    </tr>
+ </table>
+
+                        
+                      </body> 
+                      
+                      <br><br><br><br><br><br><br><br><br><br><br> 
+                        `;
+                        container.appendChild(invoice);
+                        invoices.push(invoice); // Store invoice elements
+                    });
+                })
+                .catch(error => {
+                    Swal.close(); // Hide spinner on error
+                    Swal.fire("Error", "Failed to load Marksheet. Please try again.", "error");
+                    console.error("Error fetching data:", error);
+                });
+        }
+
+        function printData() {
+            if (invoices.length === 0) {
+                Swal.fire("Warning", "No data to print. Please load Marksheet first.", "warning");
+                return;
+            }
+
+            setTimeout(() => {
+                window.print();
+            }, 500); // 500ms delay so content fully loads before print
+        }
+    </script>
+
+
+</html>
+
+
+<style>
+.singnatureTd{
+  border:none;
+  text-align: center;
+  padding:1px;
+  font-size:18px;
+}
+.singnatureTable{
+  width:76%;
+  position:absolute;
+  margin-top:271px;  
+  margin-left:300px;
+}
+.prem-janghela{
+  position:absolute;
+  margin-top:354px;  
+  margin-left:50px;
+  font-size:13px;
+  display:none;
+}
+ .studentphoto{  
+  width:140px;  
+  height:180px;  
+  position:absolute;  
+  border:1px solid black;  
+  border-radius:3px;  
+  margin-top:-500px;  
+  margin-left:1271px;
+  
+   }  
+ 
+.font-size{
+  font-size:18px;
+} 
+.font-size2{
+   font-size:13px;
+}
+.name{  
+ background-color:transparent;  
+ text-align:left;  
+ padding:3px;
+ border:none;
+
+   } 
+.nametable{  
+  position:absolute;
+  width:80%;  
+  margin-left:110px;
+  margin-top:;
+  font-size:;
+  border:none;
+  text-align:left;
+   } 
+  
+  .vm {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+.issueDate{
+  position:absolute;
+  color:black;
+  font-weight:bold;
+  margin-top:-625px;
+  font-size:22px;
+  margin-left:1400px;
+  display:none;
+}
+.dakhilno{
+  position:absolute;
+  color:black;
+  font-weight:bold;
+  margin-top:-625px;
+  font-size:22px;
+  margin-left:40px;
+  display:none;
+}
+.qr{
+  position:absolute;
+  width:70px;
+  margin-left:1530px;
+  margin-top:-720px;
+  border:0.6px solid black;
+  display:none;
+  
+}
+.sot{
+  position:absolute;
+  color:black;
+  font-size:25px;
+  font-weight:bold;
+  margin-top:240px;
+  margin-left:860px;  
+}
+.sot2{
+  position:absolute;
+  color:black;
+  font-size:25px;
+  font-weight:bold;
+  margin-top:240px;
+  margin-left:1250px;
+}
+.mtt{
+  width:93%;
+  margin-left:65px
+}
+.ts{
+  font-size:22px 22px;
+  position:absolute;
+  margin-top:600px;
+}
+.ps{
+  
+}
+ .scltxt{
+  font-size:12.5px;
+  rotate: 0deg;
+  opacity:20%;
+  position:absolute;
+  margin-top:-1400px;
+  width:3000px;
+  
+}
+  
+.aoaa{  
+  position:absolute;  
+  margin-left:650px;  
+  margin-top:70px; 
+  font-size:20px;
+   }  
+    
+  
+  
+
+
+  body {  
+        font-family: Arial, sans-serif; 
+        
+    }  table{  
+          border-collapse: collapse;  
+
+            
+ }  
+th, td {  
+    border: 1px solid black;  
+    padding: 3px 3px; 
+    font-size:;
+      
+}  
+th {  
+    background-color: transparent;  
+}  
+   .img {  
+   position:absolute;  
+   display: block;  
+   width: 99%;  
+   
+   }  
+   table {  
+   width: 100%;  
+   text-align: center;  
+   padding:3px 3px;  
+   position:absolute;  
+   margin-top:100px;  
+   padding:3ox 3px; 
+   font-size:22px;
+   }  
+ 
+  
+     
+ 
+   .nam{  
+  opacity:0%;  
+  border:none;  
+  padding:2px;  
+   }  
+   
+
+   
+  
+   .bgimg{  
+  width:47%;  
+  opacity:15%;  
+  position:absolute;  
+  margin-left:450px;  
+  margin-bottom:200px;  
+  margin-top:-90px; 
+  display:none;
+
+   }  
+   h2{  
+position:absolute;  
+  margin-left:595px;  
+  margin-top:135px;  
+  color:red;
+     font-size:35px;
+   }  
+   h1{  
+ color:#000;  
+ background-color:#CCCCFF;  
+ position:absolute;  
+ padding:5px 30px;  
+ border-radius:5px;  
+ margin-left:710px;  
+ margin-top:185px;  
+ font-size:25px; 
+   }  
+    
+   
+   .lt{  
+  width:15%;  
+  font-size:14px;
+  margin-top:230px;
+  margin-left:65px;
+  padding:1px; 
+  text-align:center;
+   }  
+
+  .st{  
+    width:76%;  
+    margin-top:135.3px;
+    font-size:17px;  
+    position: absolute;
+    margin-left:300px; 
+    text-align:left;
+   }   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+@page {  
+margin: 0px 0px 0px 0px;  
+} 
+ 
+  
+@media print {  
+body{  
+background: linear-gradient(to bottom, lightblue, navy) !important;  
+-webkit-print-color-adjust: exact; /* Ensures color prints properly */  
+print-color-adjust: exact;  
+}  
+.btn{  
+display:none;  
+}
+
+        .invoice {
+            page-break-after: always; /* Ensure each invoice starts on a new page */
+        }
+    
+.inone{
+   display:none;
+}
+
+ .scltxt{
+  font-size:12.5px;
+  rotate: 0deg;
+  opacity:20%;
+  position:absolute;
+  margin-top:-1400px;
+  width:3000px;
+  
+}
+  body {  
+        font-family: Arial, sans-serif;  
+    }  table{  
+          border-collapse: collapse;  
+
+            
+ }  
+th, td {  
+    border: 1px solid black;  
+    padding: 5px 3px;  
+      
+}  
+
+  
+   .img {  
+   position:absolute;  
+   display: block;  
+   width: 100%;  
+   
+   }  
+   table {  
+   width: 100%;  
+   text-align: center;  
+   padding:3px 3px;  
+   position:absolute;  
+   margin-top:100px;  
+   padding:3ox 3px; 
+   font-size:22px;
+   }  
+ 
+  
+     
+ 
+   .nam{  
+  opacity:0%;  
+  border:none;  
+  padding:2px;  
+   }  
+    
+   
+   
+    
+   
+    
+   
+}
+
+ .vm {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+
+.dakhilno{
+  position:absolute;
+  color:black;
+  font-weight:bold;
+  margin-top:-625px;
+  font-size:22px;
+  margin-left:40px;
+}
+
+.sot{
+  position:absolute;
+  color:black;
+  font-size:25px;
+  font-weight:bold;
+  margin-top:240px;
+  margin-left:860px;  
+}
+.sot2{
+  position:absolute;
+  color:black;
+  font-size:25px;
+  font-weight:bold;
+  margin-top:240px;
+  margin-left:1250px;
+}
+.mtt{
+  width:93%;
+  margin-left:65px
+}
+.ts{
+  font-size:22px 22px;
+  position:absolute;
+  margin-top:600px;
+}
+.ps{
+  
+}
+ .scltxt{
+  font-size:12.5px;
+  rotate: 0deg;
+  opacity:20%;
+  position:absolute;
+  margin-top:-1400px;
+  width:3000px;
+  
+}
+  body {  
+        font-family: Arial, sans-serif; 
+        
+    }  table{  
+          border-collapse: collapse;  
+
+            
+ }  
+th, td {  
+    border: 1px solid black;  
+    padding: 5px 3px;  
+      
+}  
+  
+   .img {  
+   position:absolute;  
+   display: block;  
+   width: 99%;  
+   
+   }  
+   table {  
+   width: 100%;  
+   text-align: center;  
+   padding:3px 3px;  
+   position:absolute;  
+   margin-top:100px;  
+   padding:3ox 3px; 
+   font-size:22px;
+   }  
+ 
+  
+     
+ 
+   .nam{  
+  opacity:0%;  
+  border:none;  
+  padding:2px;  
+   }  
+  
+   
+   
+   h2{  
+position:absolute;  
+  margin-left:595px;  
+  margin-top:135px;  
+  color:red;
+     font-size:35px;
+   }  
+   
+   
+    
+
+
+
+
+
+
+
+
+
+@page {  
+margin: 0px 0px 0px 0px;  
+} 
+ 
+  
+@media print {  
+body{  
+background: linear-gradient(to bottom, lightblue, navy) !important;  
+-webkit-print-color-adjust: exact; /* Ensures color prints properly */  
+print-color-adjust: exact;  
+}  
+.btn{  
+display:none;  
+}
+
+        .invoice {
+            page-break-after: always; /* Ensure each invoice starts on a new page */
+        }
+    
+.inone{
+   display:none;
+}
+
+ .scltxt{
+  font-size:12.5px;
+  rotate: 0deg;
+  opacity:20%;
+  position:absolute;
+  margin-top:-1400px;
+  width:3000px;
+  
+}
+  body {  
+        font-family: Arial, sans-serif;  
+    }  table{  
+          border-collapse: collapse;  
+
+            
+ }  
+th, td {  
+    border: 1px solid black;  
+    padding: 5px 3px;  
+      
+}  
+  
+   .img {  
+   position:absolute;  
+   display: block;  
+   width: 100%;  
+   
+   }  
+   table {  
+   width: 100%;  
+   text-align: center;  
+   padding:3px 3px;  
+   position:absolute;  
+   margin-top:100px;  
+   padding:3ox 3px; 
+   font-size:22px;
+   }  
+ 
+  
+     
+ 
+   .nam{  
+  opacity:0%;  
+  border:none;  
+  padding:2px;  
+   }  
+   
+   
+    
+    
+ .vm {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.dakhilno{
+  position:absolute;
+  color:black;
+  font-weight:bold;
+  margin-top:-625px;
+  font-size:22px;
+  margin-left:40px;
+}
+
+.sot{
+  position:absolute;
+  color:black;
+  font-size:25px;
+  font-weight:bold;
+  margin-top:240px;
+  margin-left:860px;  
+}
+.sot2{
+  position:absolute;
+  color:black;
+  font-size:25px;
+  font-weight:bold;
+  margin-top:240px;
+  margin-left:1250px;
+}
+.mtt{
+  width:93%;
+  margin-left:65px
+}
+.ts{
+  font-size:22px 22px;
+  position:absolute;
+  margin-top:600px;
+}
+.ps{
+  
+}
+ .scltxt{
+  font-size:12.5px;
+  rotate: 0deg;
+  opacity:20%;
+  position:absolute;
+  margin-top:-1400px;
+  width:3000px;
+  
+}
+  body {  
+        font-family: Arial, sans-serif; 
+        
+    }  table{  
+          border-collapse: collapse;  
+
+            
+ }  
+th, td {  
+    border: 1px solid black;  
+    padding: 5px 3px;  
+      
+}  
+  
+   .img {  
+   position:absolute;  
+   display: block;  
+   width: 99%;  
+   
+   }  
+   table {  
+   width: 100%;  
+   text-align: center;  
+   padding:3px 3px;  
+   position:absolute;  
+   margin-top:100px;  
+   padding:3ox 3px; 
+   font-size:22px;
+   }  
+ 
+  
+     
+ 
+   .nam{  
+  opacity:0%;  
+  border:none;  
+  padding:2px;  
+   }  
+   
+   .photo{  
+  width:140px;  
+  height:180px;  
+  position:absolute;  
+  border:1px solid black;  
+  border-radius:3px;  
+  margin-top:300px;  
+  margin-left:1420px;  
+   }  
+   
+  
+
+   
+   h2{  
+position:absolute;  
+  margin-left:595px;  
+  margin-top:135px;  
+  color:red;
+     font-size:35px;
+   }  
+  
+   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+@page {  
+margin: 0px 0px 0px 0px;  
+} 
+ 
+  
+@media print {  
+body{  
+background: linear-gradient(to bottom, lightblue, navy) !important;  
+-webkit-print-color-adjust: exact; /* Ensures color prints properly */  
+print-color-adjust: exact;  
+}  
+.btn{  
+display:none;  
+}
+
+        .invoice {
+            page-break-after: always; /* Ensure each invoice starts on a new page */
+        }
+    
+.inone{
+   display:none;
+}
+
+ .scltxt{
+  font-size:12.5px;
+  rotate: 0deg;
+  opacity:20%;
+  position:absolute;
+  margin-top:-1400px;
+  width:3000px;
+  
+}
+  body {  
+        font-family: Arial, sans-serif;  
+    }  table{  
+          border-collapse: collapse;  
+
+            
+ }  
+th, td {  
+    border: 1px solid black;  
+    padding: 5px 3px;  
+      
+}  
+  
+   .img {  
+   position:absolute;  
+   display: block;  
+   width: 100%;  
+   
+   }  
+   table {  
+   width: 100%;  
+   text-align: center;  
+   padding:3px 3px;  
+   position:absolute;  
+   margin-top:100px;  
+   padding:3ox 3px; 
+   font-size:22px;
+   }  
+ 
+  
+     
+ 
+   .nam{  
+  opacity:0%;  
+  border:none;  
+  padding:2px;  
+   }  
+
+    
+   
+   
+}
+
+</style>
