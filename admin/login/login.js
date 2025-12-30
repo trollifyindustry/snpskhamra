@@ -97,8 +97,8 @@ loginForm.addEventListener('submit', e => {
   const email = loginForm.querySelector('[name="email"]').value.trim();
   const password = loginForm.querySelector('[name="password"]').value.trim();
 
-  if (email === 'prem@gmail.com' && password === '1234') {
-    window.location.href = 'index.html';
+  if (email === 'ashishdit2@gmail.com' && password === '@$hi$h13') {
+    window.location.href = 'dashboard.html';
   } else {
     showModal('Login Failed', {
       Error: 'Email ya Password galat hai'
